@@ -1,7 +1,12 @@
-export default function HomePage() {
+import developer from "../components/developer";
+import BioCard from "../components/BioCard/BioCard.js";
+
+function HomePage() {
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <>
+      <BioCard developer={developer} />
+    </>
   );
 }
+
+export default HomePage;
