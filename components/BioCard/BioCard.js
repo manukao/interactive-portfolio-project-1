@@ -29,8 +29,8 @@ export default function BioCard({ developer }) {
       <Image
         src={developer.avatar}
         alt={developer.name}
-        width={96}
-        height={96}
+        width={128}
+        height={128}
       />
       <p>
         Hi, I am {developer.name}
