@@ -1,19 +1,31 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-const CardContainer = styled.div`
+const BioCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   border: 1px solid gray;
-  padding: 16px;
-  margin: 16px;
+  padding: 1rem;
+  margin: 4px;
+`;
+
+const InfoTagList = styled.ul`
+  padding: 0;
+`;
+
+const InfoTag = styled.li`
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 4px;
+  background-color: lightgray;
+  border-radius: 16px;
 `;
 
 export default function BioCard({ developer }) {
   return (
-    <CardContainer>
+    <BioCardContainer>
       <Image
         src={developer.avatar}
         alt={developer.name}
@@ -24,11 +36,11 @@ export default function BioCard({ developer }) {
         Hi, I am {developer.name}
         {developer.infoText}
       </p>
-      <ul>
+      <InfoTagList>
         {developer.infoTags.map((tag) => (
-          <li key={tag}>{tag}</li>
+          <InfoTag key={tag}>{tag}</InfoTag>
         ))}
-      </ul>
-    </CardContainer>
+      </InfoTagList>
+    </BioCardContainer>
   );
 }
