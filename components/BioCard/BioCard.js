@@ -1,8 +1,19 @@
+import styled from "styled-components";
 import Image from "next/image";
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 16px;
+  margin: 16px;
+`;
 
 export default function BioCard({ developer }) {
   return (
-    <div>
+    <CardContainer>
       <Image
         src={developer.avatar}
         alt={developer.name}
@@ -18,6 +29,6 @@ export default function BioCard({ developer }) {
           <li key={tag}>{tag}</li>
         ))}
       </ul>
-    </div>
+    </CardContainer>
   );
 }
