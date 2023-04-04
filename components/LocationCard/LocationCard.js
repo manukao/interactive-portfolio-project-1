@@ -20,13 +20,23 @@ const WeatherBadgeContainer = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
-  z-index: 1;
 `;
 
 const TimeBadgeContainer = styled.div`
   position: absolute;
   bottom: 8px;
   left: 8px;
+`;
+
+const Badge = styled.div`
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 2px 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 export default function LocationCard({ location }) {
@@ -59,10 +69,14 @@ export default function LocationCard({ location }) {
     <LocationCardContainer>
       <MapContainer ref={mapContainer} />
       <WeatherBadgeContainer>
-        <WeatherBadge location={location} />
+        <Badge>
+          <WeatherBadge location={location} />
+        </Badge>
       </WeatherBadgeContainer>
       <TimeBadgeContainer>
-        <LocalTime timezone={location.timezone} />
+        <Badge>
+          <LocalTime timezone={location.timezone} />
+        </Badge>
       </TimeBadgeContainer>
     </LocationCardContainer>
   );

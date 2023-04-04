@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import styled from "styled-components";
 
 const weatherIcons = {
   "01d": "☀️",
@@ -12,17 +11,6 @@ const weatherIcons = {
   "13d": "❄️",
   "50d": "🌫️",
 };
-
-const Badge = styled.div`
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  border-radius: 999px;
-  padding: 2px 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-`;
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -48,12 +36,10 @@ const WeatherBadge = ({ location }) => {
   const temperature = main ? Math.round(main.temp) : null;
   const weatherIcon = weather && weather[0] ? weather[0].icon : null;
 
-  console.log(location);
-
   return (
-    <Badge>
+    <>
       {weatherIcons[weatherIcon] || "🌥️"} {temperature}°C
-    </Badge>
+    </>
   );
 };
 
