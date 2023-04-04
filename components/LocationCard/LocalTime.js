@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 
-const LocalTime = ({ timezone }) => {
+const useLocalTime = (timezone) => {
   const [localTime, setLocalTime] = useState("");
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const localTimeInTimeZone = now.toLocaleTimeString("en-US", {
+      const formatter = new Intl.DateTimeFormat("en-US", {
         timeZone: timezone,
-        hour12: false,
+        hourCycle: "h23",
         hour: "2-digit",
         minute: "2-digit",
       });
+      const localTimeInTimeZone = formatter.format(now);
       setLocalTime(localTimeInTimeZone);
     };
 
@@ -23,6 +24,11 @@ const LocalTime = ({ timezone }) => {
     };
   }, [timezone]);
 
+  return localTime;
+};
+
+const LocalTime = ({ timezone }) => {
+  const localTime = useLocalTime(timezone);
   return <>⌚️{localTime}</>;
 };
 
