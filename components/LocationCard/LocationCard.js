@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import maplibregl from "maplibre-gl";
 import styled from "styled-components";
+import WeatherBadge from "./WeatherBadge";
 
 const LocationCardContainer = styled.div`
   display: flex;
@@ -12,6 +13,13 @@ const LocationCardContainer = styled.div`
 const MapContainer = styled.div`
   width: 100%;
   height: 160px;
+`;
+
+const BadgeContainer = styled.div`
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
 `;
 
 export default function LocationCard({ location }) {
@@ -43,6 +51,9 @@ export default function LocationCard({ location }) {
   return (
     <LocationCardContainer>
       <MapContainer ref={mapContainer} />
+      <BadgeContainer>
+        <WeatherBadge location={location} />
+      </BadgeContainer>
     </LocationCardContainer>
   );
 }
