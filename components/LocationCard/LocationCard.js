@@ -67,13 +67,13 @@ export default function LocationCard({ location }) {
 
   return (
     <LocationCardContainer>
-      <MapContainer ref={mapContainer} />
-      <WeatherBadgeContainer>
+      <MapContainer ref={mapContainer} data-testid="map-container" />
+      <WeatherBadgeContainer data-testid="weather-badge-container">
         <Badge>
           <WeatherBadge location={location} />
         </Badge>
       </WeatherBadgeContainer>
-      <TimeBadgeContainer>
+      <TimeBadgeContainer data-testid="time-badge-container">
         <Badge>
           <LocalTime timezone={location.timezone} />
         </Badge>
