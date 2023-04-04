@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import maplibregl from "maplibre-gl";
 import styled from "styled-components";
 import WeatherBadge from "./WeatherBadge";
+import LocalTime from "./LocalTime";
 
 const LocationCardContainer = styled.div`
   display: flex;
@@ -15,11 +16,17 @@ const MapContainer = styled.div`
   height: 160px;
 `;
 
-const BadgeContainer = styled.div`
+const WeatherBadgeContainer = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
   z-index: 1;
+`;
+
+const TimeBadgeContainer = styled.div`
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
 `;
 
 export default function LocationCard({ location }) {
@@ -51,9 +58,12 @@ export default function LocationCard({ location }) {
   return (
     <LocationCardContainer>
       <MapContainer ref={mapContainer} />
-      <BadgeContainer>
+      <WeatherBadgeContainer>
         <WeatherBadge location={location} />
-      </BadgeContainer>
+      </WeatherBadgeContainer>
+      <TimeBadgeContainer>
+        <LocalTime timezone={location.timezone} />
+      </TimeBadgeContainer>
     </LocationCardContainer>
   );
 }

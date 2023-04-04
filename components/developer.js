@@ -8,7 +8,7 @@ const developer = {
     city: "Bonn",
     lng: 7.090467929840088,
     lat: 50.73995590209961,
-    timezone: "UTC-2",
+    timezone: "Europe/Berlin",
   },
 };
 
