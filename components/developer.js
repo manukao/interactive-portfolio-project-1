@@ -10,6 +10,21 @@ const developer = {
     lat: 50.73995590209961,
     timezone: "Europe/Berlin",
   },
+  techSkills: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Vite",
+    "MongoDB",
+    "styled-components",
+    "Tailwind",
+    "Git",
+    "GitHub",
+    "Three.js",
+    "Shopify",
+    "Figma",
+  ],
 };
 
 export default developer;
