@@ -7,8 +7,6 @@ const TechStackCardContainer = styled.div`
   border: 1px solid gray;
   padding: 1rem;
   margin: 4px;
-  gap: 0.5rem;
-  margin: 4px;
 `;
 
 const TechStackCardList = styled.ul`
