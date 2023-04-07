@@ -26,6 +26,8 @@ const developer = {
     "Shopify",
     "Figma",
   ],
+  socials: {
+    gitHub: "https://github.com/manukao",
+  },
 };
-
 export default developer;
