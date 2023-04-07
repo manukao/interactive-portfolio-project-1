@@ -4,6 +4,7 @@ import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
 import AgeCard from "../components/AgeCard/AgeCard";
 import GitHubCard from "../components/GitHubCard/GitHubCard";
+import LinkedInCard from "../components/LinkedInCard/LinkedInCard";
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
       <TechStackCard techSkills={developer.techSkills} />
       <AgeCard ageOfDeveloper={developer.age} />
       <GitHubCard gitHubLink={developer.socials.gitHub} />
+      <LinkedInCard linkedInLink={developer.socials.linkedIn} />
     </>
   );
 }

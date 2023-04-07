@@ -28,6 +28,7 @@ const developer = {
   ],
   socials: {
     gitHub: "https://github.com/manukao",
+    linkedIn: "https://www.linkedin.com/in/manuel-kao-aa4923178/",
   },
 };
 export default developer;
