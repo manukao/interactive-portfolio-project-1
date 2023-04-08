@@ -5,6 +5,7 @@ import TechStackCard from "../components/TechStackCard/TechStackCard";
 import AgeCard from "../components/AgeCard/AgeCard";
 import GitHubCard from "../components/GitHubCard/GitHubCard";
 import LinkedInCard from "../components/LinkedInCard/LinkedInCard";
+import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
       <AgeCard ageOfDeveloper={developer.age} />
       <GitHubCard gitHubLink={developer.socials.gitHub} />
       <LinkedInCard linkedInLink={developer.socials.linkedIn} />
+      <ProjectsCard projects={developer.projects} />
     </>
   );
 }
