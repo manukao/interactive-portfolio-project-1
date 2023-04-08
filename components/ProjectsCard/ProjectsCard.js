@@ -53,23 +53,29 @@ export default function ProjectsCard({ projects }) {
     <ProjectsCardContainer>
       <ProjectSlider
         id="project-slider"
+        data-testid="project-website"
         href={projects[currentProjectIndex].website}
         target="_blank"
         rel="noopener noreferrer"
       >
         <StyledImage
           src={projects[currentProjectIndex].projectImg}
-          alt={projects[currentProjectIndex].name}
+          alt={projects[currentProjectIndex].title}
+          data-testid="project-image"
           width={128}
           height={128}
         />
         <ProjectSliderRightSide>
-          <ProjectTitle>{projects[currentProjectIndex].title}</ProjectTitle>
-          <ProjectStatus>{projects[currentProjectIndex].status}</ProjectStatus>
-          <ProjectDescription>
+          <ProjectTitle data-testid="project-title">
+            {projects[currentProjectIndex].title}
+          </ProjectTitle>
+          <ProjectStatus data-testid="project-status">
+            {projects[currentProjectIndex].status}
+          </ProjectStatus>
+          <ProjectDescription data-testid="project-description">
             {projects[currentProjectIndex].description}
           </ProjectDescription>
-          <ProjectStack>
+          <ProjectStack data-testid="project-stack">
             {projects[currentProjectIndex].stack.map((stack) => (
               <ProjectStackItem key={stack}>{stack}</ProjectStackItem>
             ))}
