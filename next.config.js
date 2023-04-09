@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   compiler: {
     styledComponents: true,
@@ -12,6 +11,9 @@ const nextConfig = {
     });
 
     return config;
+  },
+  images: {
+    domains: ["cdn.shopify.com"],
   },
 };
 

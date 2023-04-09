@@ -33,8 +33,7 @@ export default function BioCard({ developer }) {
         height={128}
       />
       <p>
-        Hi, I am {developer.name}
-        {developer.infoText}
+        Hi, I am {developer.name}. {developer.infoText}
       </p>
       <InfoTagList>
         {developer.infoTags.map((tag) => (
