@@ -59,16 +59,16 @@ const developer = {
   ],
   testimonials: [
     {
+      text: "Working with Manu is pure pleasure! His expert prompting skills and attention to detail complement my weaknesses perfectly. We're the ultimate dream team.",
       name: "GPT-4",
-      text: "Manu's web dev skills made me, an AI, beam with pride! Together, we craft stunning websites with code and creativity. A dream team for the digital world!",
     },
     {
-      name: "Livia, 1 year old",
       text: "Goo goo, ga ga! Dad makes the web so fun and pretty, even I can't look away!",
+      name: "Livia, 1 year old",
     },
     {
+      text: "It's like watching a digital swan emerge from a pixelated duckling!",
       name: "Manu's Computer",
-      text: "As Manu's trusty computer, I've seen their web designs blossom – from early days of comic sans and clashing colors to the stunning masterpieces they create today. It's like watching a digital swan emerge from a pixelated duckling!",
     },
   ],
 };

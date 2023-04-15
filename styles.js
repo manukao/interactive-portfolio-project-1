@@ -29,4 +29,14 @@ export default createGlobalStyle`
     opacity: 0.2;
   }
 }
+
+/* TestimonialsCard custom marquee scroll */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
 `;

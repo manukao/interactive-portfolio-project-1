@@ -58,7 +58,6 @@ const UsedDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  witdh: 100%;
   opacity: 0.3;
 `;
 
