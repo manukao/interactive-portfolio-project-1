@@ -48,13 +48,17 @@ const TestimonialAuthor = styled.div`
 
 export default function TestimonialsCard({ testimonials }) {
   return (
-    <TestimonialsCardContainer>
+    <TestimonialsCardContainer data-testid="testimonials-card">
       <Marquee>
         <MarqueeContent>
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index}>
-              <TestimonialText>{testimonial.text}</TestimonialText>
-              <TestimonialAuthor>{testimonial.name}</TestimonialAuthor>
+            <TestimonialCard key={index} data-testid="testimonial-card">
+              <TestimonialText data-testid="testimonial-text">
+                {testimonial.text}
+              </TestimonialText>
+              <TestimonialAuthor data-testid="testimonial-author">
+                {testimonial.name}
+              </TestimonialAuthor>
             </TestimonialCard>
           ))}
         </MarqueeContent>
