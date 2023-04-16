@@ -23,7 +23,7 @@ const MarqueeContent = styled.ul`
   justify-content: space-around;
   min-width: 100%;
   gap: var(--gap);
-  animation: scroll 20s linear infinite;
+  animation: scroll 15s linear infinite;
 `;
 
 const TestimonialCard = styled.li`
