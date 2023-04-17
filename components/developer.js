@@ -57,5 +57,19 @@ const developer = {
       stack: ["Shopify", "Liquid", "Tailwind", "Branding", "Design"],
     },
   ],
+  testimonials: [
+    {
+      text: "Working with Manu is pure pleasure! His expert prompting skills and attention to detail complement my weaknesses perfectly. We're the ultimate dream team.",
+      name: "GPT-4",
+    },
+    {
+      text: "Goo goo, ga ga! Dad makes the web so fun and pretty, even I can't look away!",
+      name: "Livia, 1 year old",
+    },
+    {
+      text: "It's like watching a digital swan emerge from a pixelated duckling!",
+      name: "Manu's Computer",
+    },
+  ],
 };
 export default developer;

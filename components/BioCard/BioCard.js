@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import TestimonialsCard from "../TestimonialsCard/TestimonialsCard";
 
 const BioCardContainer = styled.div`
   display: flex;
