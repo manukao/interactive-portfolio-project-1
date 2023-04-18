@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 
 const ContactFormContainer = styled.div`
@@ -46,12 +45,20 @@ export default function ContactCardForm() {
   const handleSubmit = async (submitEvent) => {
     submitEvent.preventDefault();
     try {
-      await axios.post("/api/contactForm", formData);
+      await fetch("/api/contactForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
       setFormData({ name: "", email: "", message: "" });
-      alert("Message sent successfully!");
+      alert("Thank you for your message! I'll get back to you asap.");
     } catch (error) {
       console.error(error);
-      alert("Error sending message. Please try again.");
+      alert(
+        "Something went wrong, please try again, thanks for your patience!"
+      );
     }
   };
 

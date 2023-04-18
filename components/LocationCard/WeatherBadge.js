@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import { useRouter } from "next/router";
 
 const weatherIcons = {
   "01d": "☀️",
@@ -14,12 +15,14 @@ const weatherIcons = {
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const WeatherBadge = ({ location }) => {
+export default function WeatherBadge({ location }) {
+  const router = useRouter();
   const usersCity = `${location.city}`;
-  const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
 
   const { data, error } = useSWR(
-    `https://api.openweathermap.org/data/2.5/weather?q=${usersCity}&units=metric&appid=${API_KEY}`,
+    router.pathname === "/api/openweathermap"
+      ? null
+      : `/api/openweathermap?city=${usersCity}`,
     fetcher,
     { refreshInterval: 120000 }
   );
@@ -41,6 +44,4 @@ const WeatherBadge = ({ location }) => {
       {weatherIcons[weatherIcon] || "🌥️"} {temperature}°C
     </>
   );
-};
-
-export default WeatherBadge;
+}
