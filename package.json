@@ -20,7 +20,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "styled-components": "^5.3.6",
-    "swr": "^2.1.2"
+    "swr": "^2.1.2",
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
