@@ -3,6 +3,7 @@ import maplibregl from "maplibre-gl";
 import styled from "styled-components";
 import WeatherBadge from "./WeatherBadge";
 import LocalTime from "./LocalTime";
+import { useRouter } from "next/router";
 
 const LocationCardContainer = styled.div`
   display: flex;
@@ -46,24 +47,36 @@ export default function LocationCard({ location }) {
   const [lat] = useState(`${location.lat}`);
   const [zoom] = useState(6.5);
 
-  const [MAPTILER_API_KEY] = useState(process.env.NEXT_PUBLIC_MAPTILER_API_KEY);
+  const router = useRouter();
 
   useEffect(() => {
     if (map.current) return;
-    map.current = new maplibregl.Map({
-      container: mapContainer.current,
-      style: `https://api.maptiler.com/maps/84ae0c2c-718b-49a5-a818-493c28f227bb/style.json?key=${MAPTILER_API_KEY}`,
-      center: [lng, lat],
-      zoom: zoom,
-      attributionControl: false,
-    });
 
-    map.current.addControl(new maplibregl.NavigationControl());
+    const fetchMapStyle = async () => {
+      try {
+        const response = await fetch(`/api/maptiler?lat=${lat}&lng=${lng}`);
+        const mapStyle = await response.json();
 
-    new maplibregl.Marker({ color: "#fca5a5" })
-      .setLngLat([7.0904, 50.7399])
-      .addTo(map.current);
-  }, [MAPTILER_API_KEY, lat, lng, zoom]);
+        map.current = new maplibregl.Map({
+          container: mapContainer.current,
+          style: mapStyle,
+          center: [lng, lat],
+          zoom: zoom,
+          attributionControl: false,
+        });
+
+        map.current.addControl(new maplibregl.NavigationControl());
+
+        new maplibregl.Marker({ color: "#fca5a5" })
+          .setLngLat([7.0904, 50.7399])
+          .addTo(map.current);
+      } catch (error) {
+        console.error("Error fetching Maptiler data:", error);
+      }
+    };
+
+    fetchMapStyle();
+  }, [lat, lng, zoom, router.pathname]);
 
   return (
     <LocationCardContainer>
