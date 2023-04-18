@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const { name, email, message } = req.body;
 
     const webhookURL =
-      "https://discord.com/api/webhooks/1097847480697225226/8smtlEwEhZDyNFocN089-y2YFJqF34dAM7TLdP6X7nM3XeIC6qBLhMjO5bkCc34yWgeM";
+      `https://discord.com/api/webhooks/1097847480697225226/${process.env.DISCORD_WEBHOOK_TOKEN}`;
 
     const embed = {
       title: "New message from a Portfolio Visitor",
