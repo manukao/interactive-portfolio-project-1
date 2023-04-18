@@ -7,6 +7,7 @@ import GitHubCard from "../components/GitHubCard/GitHubCard";
 import LinkedInCard from "../components/LinkedInCard/LinkedInCard";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
+import ContactCardForm from "../components/ContactCard/ContactCardForm";
 
 function HomePage() {
   return (
@@ -19,6 +20,7 @@ function HomePage() {
       <GitHubCard gitHubLink={developer.socials.gitHub} />
       <LinkedInCard linkedInLink={developer.socials.linkedIn} />
       <ProjectsCard projects={developer.projects} />
+      <ContactCardForm />
     </>
   );
 }
