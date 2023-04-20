@@ -16,7 +16,7 @@ const TechStackCardItem = styled.li`
   display: inline-block;
   padding: 4px 8px;
   margin: 4px;
-  background-color: lightgray;
+  background-color: var(--bg-secondary-color);
   border-radius: 0.25rem;
 `;
 

@@ -6,13 +6,19 @@ const BioCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   height: 100%;
-  width: 100%;
+  text-align: center;
+  padding: 4px 4px;
 `;
 
-const BioCardText = styled.div`
-  font-size: small;
+const BioCardAvatar = styled(Image)`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 `;
+
+const BioCardText = styled.div``;
 
 const InfoTagList = styled.ul`
   padding: 0;
@@ -20,16 +26,16 @@ const InfoTagList = styled.ul`
 
 const InfoTag = styled.li`
   display: inline-block;
-  padding: 4px 8px;
+  padding: 4px 4px;
   margin: 4px;
-  background-color: lightgray;
-  border-radius: 16px;
+  background-color: var(--bg-secondary-color);
+  border-radius: 0.25rem;
 `;
 
 export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
-      <Image
+      <BioCardAvatar
         src={developer.avatar}
         alt={developer.name}
         width={100}

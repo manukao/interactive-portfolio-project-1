@@ -10,13 +10,25 @@ import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
 import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
+import Footer from "../components/Footer/Footer";
 
 const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   max-height: 100vh;
-  overflow: hidden;
+`;
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  background-color: var(--background-color);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `;
 
 const Background = styled.div`
@@ -31,14 +43,13 @@ const Background = styled.div`
 
 const MainBox = styled.div`
   position: absolute;
-  bottom: 12px;
+  bottom: 2rem;
   width: 100%;
   max-width: 64rem;
-  height: 180px;
+  height: 200px;
   max-height: 100%;
   border-radius: 0.25rem;
   overflow: hidden;
-  opacity: 0.8;
   left: 50%;
   transform: translateX(-50%);
   padding-left: 0.75rem;
@@ -60,8 +71,7 @@ const CardSection = styled.section`
   width: 100%;
   scroll-snap-align: start;
   scroll-behavior: smooth;
-  padding: 4px 4px;
-  background-color: #f5f5f5;
+  background-color: var(--background-color);
 `;
 
 const CardWrapper = styled.div`
@@ -70,17 +80,21 @@ const CardWrapper = styled.div`
   height: 100%;
 `;
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       <HomePageContainer>
         <Background>
           <PanoramaViewer />
         </Background>
+        <HeaderContainer />
         <MainBox>
           <ScrollContainer>
             <CardSection>
               <BioCard developer={developer} />
+            </CardSection>
+            <CardSection>
+              <TechStackCard techSkills={developer.techSkills} />
             </CardSection>
             <CardSection>
               <CardWrapper>
@@ -93,32 +107,21 @@ function HomePage() {
               </CardWrapper>
             </CardSection>
             <CardSection>
-              <TechStackCard techSkills={developer.techSkills} />
-            </CardSection>
-            <CardSection>
               <ProjectsCard projects={developer.projects} />
             </CardSection>
             <CardSection>
-              <ContactCardForm />
+              <TestimonialsCard testimonials={developer.testimonials} />
+            </CardSection>
+            <CardSection id="contact">
+              <ContactCardForm id="contact-form" />
             </CardSection>
           </ScrollContainer>
         </MainBox>
+        <Footer
+          gitHubLink={developer.socials.gitHub}
+          linkedInLink={developer.socials.linkedIn}
+        />
       </HomePageContainer>
     </>
   );
 }
-
-export default HomePage;
-
-/*
-
-      <BioCard developer={developer} />
-      <LocationCard location={developer.location} />
-      <TechStackCard techSkills={developer.techSkills} />
-      <AgeCard ageOfDeveloper={developer.age} />
-      <TestimonialsCard testimonials={developer.testimonials} />
-      <GitHubCard gitHubLink={developer.socials.gitHub} />
-      <LinkedInCard linkedInLink={developer.socials.linkedIn} />
-      <ProjectsCard projects={developer.projects} />
-      <ContactCardForm />
-*/

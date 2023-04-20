@@ -5,15 +5,12 @@ const GitHubCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
 `;
 
 const GitHubLinkIcon = styled.a`
-  color: inherit;
+  color: var(--color-primary);
   text-decoration: none;
+  opacity: 0.8;
 `;
 
 export default function GitHubCard({ gitHubLink }) {
@@ -25,7 +22,7 @@ export default function GitHubCard({ gitHubLink }) {
         rel="noopener noreferrer"
         data-testid="github-link"
       >
-        <VscGithub size={100} />
+        <VscGithub size={16} />
       </GitHubLinkIcon>
     </GitHubCardContainer>
   );

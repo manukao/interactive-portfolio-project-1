@@ -41,8 +41,8 @@ export const ProjectStatus = styled.div`
   font-size: 0.75rem;
   padding: 2px 4px;
   margin: 2px;
-  background-color: lightgray;
-  border-radius: 16px;
+  background-color: var(--bg-secondary-color);
+  border-radius: 0.25rem;
 `;
 
 export const ProjectTitle = styled.div`
@@ -62,8 +62,8 @@ export const ProjectStack = styled.div`
 
 export const ProjectStackItem = styled.div`
   display: inline-block;
-  background-color: lightgray;
-  border-radius: 16px;
+  background-color: var(--bg-secondary-color);
+  border-radius: 0.25rem;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
   height: 1rem;
@@ -83,7 +83,7 @@ export const ProjectLeftArrowContainer = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: lightgray;
+  background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
 
@@ -98,7 +98,7 @@ export const ProjectRightArrowContainer = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: lightgray;
+  background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
 

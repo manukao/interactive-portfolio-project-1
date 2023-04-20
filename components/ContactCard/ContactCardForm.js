@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const ContactFormContainer = styled.div`
-  background-color: white;
   padding: 4px 4px;
   height: 100%;
 `;
@@ -19,6 +18,7 @@ const ContactForm = styled.form`
 const TextInput = styled.input`
   width: 150px;
   margin: 4px;
+  background-color: var(--bg-secondary-color);
 `;
 
 const MessageInput = styled.textarea`
@@ -26,6 +26,7 @@ const MessageInput = styled.textarea`
   width: 300px;
   height: 60px;
   margin: 4px;
+  background-color: var(--bg-secondary-color);
 `;
 
 export default function ContactCardForm() {

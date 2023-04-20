@@ -5,15 +5,12 @@ const LinkedInCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
 `;
 
 const LinkedInLinkIcon = styled.a`
-  color: inherit;
+  color: var(--color-primary);
   text-decoration: none;
+  opacity: 0.8;
 `;
 
 export default function LinkedInCard({ linkedInLink }) {
@@ -25,7 +22,7 @@ export default function LinkedInCard({ linkedInLink }) {
         rel="noopener noreferrer"
         data-testid="linkedin-link"
       >
-        <RiLinkedinBoxLine size={120} />
+        <RiLinkedinBoxLine size={18} />
       </LinkedInLinkIcon>
     </LinkedInCardContainer>
   );
