@@ -49,7 +49,7 @@ const developer = {
     },
     {
       projectImg:
-        "https://cdn.shopify.com/s/files/1/0665/4669/6427/files/logodick.png?v=1664478364&width=300",
+        "https://cdn.shopify.com/s/files/1/0665/4669/6427/files/logodick.png?v=1664478364",
       title: "JK Immobilien",
       description: "Independent Real-Estate Agent",
       website: "https://jkimmobilien.myshopify.com/",

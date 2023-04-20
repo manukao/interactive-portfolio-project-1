@@ -16,6 +16,7 @@ import {
   ProjectRightArrowContainer,
   ProjectDotContainer,
   ProjectDot,
+  ProjectSliderLeftSide,
 } from "./ProjectStyles";
 
 export default function ProjectsCard({ projects }) {
@@ -58,13 +59,16 @@ export default function ProjectsCard({ projects }) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <StyledImage
-          src={projects[currentProjectIndex].projectImg}
-          alt={projects[currentProjectIndex].title}
-          data-testid="project-image"
-          width={128}
-          height={128}
-        />
+        <ProjectSliderLeftSide>
+          <StyledImage
+            src={projects[currentProjectIndex].projectImg}
+            alt={projects[currentProjectIndex].title}
+            data-testid="project-image"
+            layout="responsive"
+            width={100}
+            height={100}
+          />
+        </ProjectSliderLeftSide>
         <ProjectSliderRightSide>
           <ProjectTitle data-testid="project-title">
             {projects[currentProjectIndex].title}
