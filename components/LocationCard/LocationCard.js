@@ -14,6 +14,7 @@ const LocationCardContainer = styled.div`
 const MapContainer = styled.div`
   width: 100%;
   height: 100%;
+  opacity: 0.8;
 `;
 
 const WeatherBadgeContainer = styled.div`
@@ -30,7 +31,7 @@ const TimeBadgeContainer = styled.div`
 
 const Badge = styled.div`
   background-color: white;
-  color: black;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +39,7 @@ const Badge = styled.div`
   border-radius: 0.25rem;
   padding: 2px 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: var(--background-color);
 `;
 
 export default function LocationCard({ location }) {
@@ -68,7 +70,7 @@ export default function LocationCard({ location }) {
 
         map.current.addControl(new maplibregl.NavigationControl());
 
-        new maplibregl.Marker({ color: "#fca5a5" })
+        new maplibregl.Marker({ color: "var(--color-secondary)" })
           .setLngLat([7.0904, 50.7399])
           .addTo(map.current);
       } catch (error) {

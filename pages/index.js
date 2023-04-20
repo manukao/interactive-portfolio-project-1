@@ -3,8 +3,6 @@ import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
 import AgeCard from "../components/AgeCard/AgeCard";
-import GitHubCard from "../components/GitHubCard/GitHubCard";
-import LinkedInCard from "../components/LinkedInCard/LinkedInCard";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";

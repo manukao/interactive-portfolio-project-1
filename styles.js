@@ -13,8 +13,6 @@ export default createGlobalStyle`
     --border-radius: 0.25rem;
     --background-color: rgba(32, 32, 32, 0.8);
     --bg-secondary-color: rgba(64, 64, 64, 0.8);
-    --tw-text-opacity: 1;
-    --tw-bg-opacity: 1;
   }
 
   body {
