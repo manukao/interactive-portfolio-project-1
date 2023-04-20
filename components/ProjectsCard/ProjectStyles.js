@@ -87,14 +87,14 @@ export const ProjectStackItem = styled.div`
 export const ProjectLeftArrowContainer = styled.div`
   position: absolute;
   top: 90%;
-  left: 0;
+  left: 4px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
   background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
@@ -102,14 +102,14 @@ export const ProjectLeftArrowContainer = styled.div`
 export const ProjectRightArrowContainer = styled.div`
   position: absolute;
   top: 90%;
-  right: 0;
+  right: 4px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
   background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
