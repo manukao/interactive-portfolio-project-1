@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const AgeCardContainerWrapper = styled.div`
-  height: 240px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
   border: 1px solid gray;
+  flex: 1;
 `;
 
 const AgeCardContainer = styled.div`

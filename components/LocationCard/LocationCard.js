@@ -9,12 +9,12 @@ const LocationCardContainer = styled.div`
   display: flex;
   position: relative;
   border: 1px solid gray;
-  margin: 4px;
+  flex: 1;
 `;
 
 const MapContainer = styled.div`
   width: 100%;
-  height: 160px;
+  height: 100%;
 `;
 
 const WeatherBadgeContainer = styled.div`
@@ -63,6 +63,7 @@ export default function LocationCard({ location }) {
           center: [lng, lat],
           zoom: zoom,
           attributionControl: false,
+          scrollZoom: false,
         });
 
         map.current.addControl(new maplibregl.NavigationControl());

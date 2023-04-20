@@ -34,7 +34,7 @@ export default function PanoramaViewer() {
     container.appendChild(renderer.domElement);
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("/assets/sunrisepanorama.jpeg");
+    const texture = loader.load("/assets/jungle.jpeg");
 
     const geometry = new THREE.SphereGeometry(500, 60, 40);
     geometry.scale(-1, 1, 1);

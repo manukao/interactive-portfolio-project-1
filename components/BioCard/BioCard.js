@@ -5,10 +5,14 @@ const BioCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
   border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
+`;
+
+const BioCardText = styled.div`
+  font-size: small;
 `;
 
 const InfoTagList = styled.ul`
@@ -32,9 +36,9 @@ export default function BioCard({ developer }) {
         width={128}
         height={128}
       />
-      <p>
+      <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}
-      </p>
+      </BioCardText>
       <InfoTagList>
         {developer.infoTags.map((tag) => (
           <InfoTag key={tag}>{tag}</InfoTag>

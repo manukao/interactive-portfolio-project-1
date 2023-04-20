@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   *,
@@ -10,6 +10,16 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+    overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  height: 100%;
+  max-height: 100vh;
+  flex-direction: column;
+  transition: color 200ms;
+  background-color: black;
+  font-size: 1rem;
   }
 
 /* ProjectsCard custom flash class on index change */

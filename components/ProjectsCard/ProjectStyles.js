@@ -9,8 +9,8 @@ export const ProjectsCardContainer = styled.div`
   background-color: white;
   border: 1px solid gray;
   padding: 1rem;
-  margin: 4px;
   position: relative;
+  height: 100%;
 `;
 
 export const ProjectSlider = styled.a`

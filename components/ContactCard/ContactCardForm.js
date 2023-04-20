@@ -4,14 +4,15 @@ import styled from "styled-components";
 const ContactFormContainer = styled.div`
   background-color: white;
   border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
+  padding: 4px 4px;
+  height: 100%;
 `;
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 `;

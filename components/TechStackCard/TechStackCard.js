@@ -4,9 +4,9 @@ const TechStackCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid gray;
-  padding: 1rem;
   margin: 4px;
+  height: 100%;
+  width: 100%;
 `;
 
 const TechStackCardList = styled.ul`
@@ -18,7 +18,7 @@ const TechStackCardItem = styled.li`
   padding: 4px 8px;
   margin: 4px;
   background-color: lightgray;
-  border-radius: 16px;
+  border-radius: 0.25rem;
 `;
 
 export default function TechStackCard({ techSkills }) {
