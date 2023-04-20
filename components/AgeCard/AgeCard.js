@@ -7,13 +7,27 @@ const AgeCardContainerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
+  width: 100%;
+`;
+
+const AgeCardDescription = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: var(--primary-color);
+  z-index: 10;
+  width: 50%;
 `;
 
 const AgeCardContainer = styled.div`
   position: relative;
   text-align: center;
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 40%;
+  border-radius: 0.25rem;
+  background-color: var(--bg-secondary-color);
 `;
 
 const RemainingDiv = styled.div`
@@ -22,6 +36,7 @@ const RemainingDiv = styled.div`
   justify-content: center;
   align-items: center;
   opacity: 0.3;
+  font-size: xx-small;
 `;
 
 const AgeButtonBadgeContainer = styled.div`
@@ -30,18 +45,20 @@ const AgeButtonBadgeContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 `;
 
 const AgeButtonBadge = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
 `;
 
 const AgeButton = styled.button`
   background-color: transparent;
+  color: var(--primary-color);
   border: 1px solid gray;
+  border-radius: 0.25rem;
   margin: 4px;
   cursor: pointer;
   user-select: none;
@@ -53,11 +70,13 @@ const AgeValue = styled.p`
 
 const UsedDiv = styled.div`
   height: ${({ customHeightAge }) => customHeightAge};
-  background-color: red;
+  background-color: var(--color-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0.3;
+  border-radius: 0.25rem;
+  font-size: xx-small;
 `;
 
 export default function AgeCard({ ageOfDeveloper }) {
@@ -88,6 +107,10 @@ export default function AgeCard({ ageOfDeveloper }) {
 
   return (
     <AgeCardContainerWrapper>
+      <AgeCardDescription>
+        <h1>Age</h1>
+        <p>How old are you?</p>
+      </AgeCardDescription>
       <AgeCardContainer>
         <RemainingDiv remainingHeight={remainingHeight}>
           {timeRemaining > 0 && (

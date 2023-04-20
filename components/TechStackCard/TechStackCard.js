@@ -6,10 +6,12 @@ const TechStackCardContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+  padding: 0.5rem;
 `;
 
 const TechStackCardList = styled.ul`
   padding: 0;
+  margin: 0;
 `;
 
 const TechStackCardItem = styled.li`
