@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const ContactFormContainer = styled.div`
   background-color: white;
-  border: 1px solid gray;
   padding: 4px 4px;
   height: 100%;
 `;

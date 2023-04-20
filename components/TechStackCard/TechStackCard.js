@@ -4,7 +4,6 @@ const TechStackCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 4px;
   height: 100%;
   width: 100%;
 `;

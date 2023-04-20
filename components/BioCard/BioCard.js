@@ -8,7 +8,6 @@ const BioCardContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  border: 1px solid gray;
 `;
 
 const BioCardText = styled.div`
@@ -33,8 +32,8 @@ export default function BioCard({ developer }) {
       <Image
         src={developer.avatar}
         alt={developer.name}
-        width={128}
-        height={128}
+        width={100}
+        height={100}
       />
       <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}

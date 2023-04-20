@@ -34,7 +34,7 @@ const MainBox = styled.div`
   bottom: 12px;
   width: 100%;
   max-width: 64rem;
-  height: 240px;
+  height: 180px;
   max-height: 100%;
   border-radius: 0.25rem;
   overflow: hidden;

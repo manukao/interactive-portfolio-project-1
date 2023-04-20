@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 const LocationCardContainer = styled.div`
   display: flex;
   position: relative;
-  border: 1px solid gray;
   flex: 1;
 `;
 

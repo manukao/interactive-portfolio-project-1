@@ -6,9 +6,6 @@ export const ProjectsCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
   position: relative;
   height: 100%;
 `;
@@ -77,7 +74,7 @@ export const ProjectStackItem = styled.div`
 
 export const ProjectLeftArrowContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 0;
   transform: translateY(-50%);
   display: flex;
@@ -92,7 +89,7 @@ export const ProjectLeftArrowContainer = styled.div`
 
 export const ProjectRightArrowContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 90%;
   right: 0;
   transform: translateY(-50%);
   display: flex;

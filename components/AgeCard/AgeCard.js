@@ -6,7 +6,6 @@ const AgeCardContainerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
   flex: 1;
 `;
 
