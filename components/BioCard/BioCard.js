@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Typewriter from "../Typewriter/Typewriter";
 
 const BioCardContainer = styled.div`
   display: flex;
@@ -35,14 +36,10 @@ const InfoTag = styled.li`
 export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
-      <BioCardAvatar
-        src={developer.avatar}
-        alt={developer.name}
-        width={100}
-        height={100}
-      />
       <BioCardText>
-        Hi, I am {developer.name}. {developer.infoText}
+        <Typewriter
+          text={`Hi, I am ${developer.name}.\n${developer.infoText}`}
+        />
       </BioCardText>
       <InfoTagList>
         {developer.infoTags.map((tag) => (
@@ -52,3 +49,12 @@ export default function BioCard({ developer }) {
     </BioCardContainer>
   );
 }
+
+/*
+<BioCardAvatar
+        src={developer.avatar}
+        alt={developer.name}
+        width={100}
+        height={100}
+      />
+      */

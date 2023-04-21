@@ -9,6 +9,7 @@ import ContactCardForm from "../components/ContactCard/ContactCardForm";
 import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
 import Footer from "../components/Footer/Footer";
+import Memoji from "../components/Three/Memoji";
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -17,13 +18,23 @@ const HomePageContainer = styled.div`
   max-height: 100vh;
 `;
 
+const TestCard = styled.div`
+  height: 200px;
+  width: 100%;
+  background-color: var(--background-color);
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 48px;
   background-color: var(--background-color);
-  color: #fff;
+  color: var(--color-primary);
   position: fixed;
   top: 0;
   width: 100%;
@@ -41,10 +52,10 @@ const Background = styled.div`
 
 const MainBox = styled.div`
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   width: 100%;
   max-width: 64rem;
-  height: 30vh;
+  height: 25vh;
   max-height: 100%;
   border-radius: 0.25rem;
   overflow: hidden;
@@ -105,6 +116,7 @@ export default function HomePage() {
           <PanoramaViewer />
         </Background>
         <HeaderContainer />
+        <Memoji />
         <MainBox>
           <ScrollContainer>
             <CardSection>

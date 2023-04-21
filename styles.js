@@ -59,4 +59,21 @@ export default createGlobalStyle`
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
-`;
+
+/* Typewriter */
+//@keyframes typewriter {
+//  from {
+//    width: 0;
+//  }
+//  to {
+//    width: 100%;
+//  }
+//}
+//
+//@keyframes blink-caret {
+//  50% {
+//    border-color: transparent;
+//  }
+//}
+//
+//`;
