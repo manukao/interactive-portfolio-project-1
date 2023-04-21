@@ -27,9 +27,9 @@ const InfoTagList = styled.ul`
 const InfoTag = styled.li`
   display: inline-block;
   padding: 4px 4px;
-  margin: 4px;
+  margin: 0 4px 0 4px;
   background-color: var(--bg-secondary-color);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
 `;
 
 export default function BioCard({ developer }) {

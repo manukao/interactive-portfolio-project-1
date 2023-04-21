@@ -35,7 +35,7 @@ const RemainingDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.3;
+  opacity: 0.1;
   font-size: xx-small;
 `;
 
@@ -57,8 +57,8 @@ const AgeButtonBadge = styled.div`
 const AgeButton = styled.button`
   background-color: transparent;
   color: var(--primary-color);
-  border: 1px solid gray;
-  border-radius: 0.25rem;
+  border: 1px solid;
+  border-radius: var(--border-radius);
   margin: 4px;
   cursor: pointer;
   user-select: none;

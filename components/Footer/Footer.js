@@ -75,7 +75,7 @@ export default function Footer({ gitHubLink, linkedInLink }) {
         >
           Privacy
         </FooterLink>
-        <FooterLinkCTA href="/#contact-form" data-testid="">
+        <FooterLinkCTA href="#contact" data-testid="">
           Message me<span> 💬</span>
         </FooterLinkCTA>
       </FooterLinkContainer>

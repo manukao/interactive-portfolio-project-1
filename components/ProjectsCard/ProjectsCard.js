@@ -64,9 +64,8 @@ export default function ProjectsCard({ projects }) {
             src={projects[currentProjectIndex].projectImg}
             alt={projects[currentProjectIndex].title}
             data-testid="project-image"
-            layout="responsive"
-            width={100}
-            height={100}
+            width={256}
+            height={256}
           />
         </ProjectSliderLeftSide>
         <ProjectSliderRightSide>

@@ -36,7 +36,7 @@ const Badge = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   padding: 2px 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   background-color: var(--background-color);
@@ -66,6 +66,7 @@ export default function LocationCard({ location }) {
           zoom: zoom,
           attributionControl: false,
           scrollZoom: false,
+          dragPan: false,
         });
 
         map.current.addControl(new maplibregl.NavigationControl());

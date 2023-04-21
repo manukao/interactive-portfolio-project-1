@@ -19,6 +19,16 @@ const TextInput = styled.input`
   width: 150px;
   margin: 4px;
   background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 8px;
+  color: var(--color-primary);
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-primary);
+    color: var(--bg-secondary-color);
+  }
 `;
 
 const MessageInput = styled.textarea`
@@ -27,6 +37,36 @@ const MessageInput = styled.textarea`
   height: 60px;
   margin: 4px;
   background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 8px;
+  color: var(--color-primary);
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-primary);
+    color: var(--bg-secondary-color);
+  }
+`;
+
+const SubmitButton = styled.button`
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--color-primary);
+  padding: 8px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--bg-secondary-color);
+    color: var(--color-secondary);
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default function ContactCardForm() {
@@ -95,9 +135,9 @@ export default function ContactCardForm() {
           maxLength={150}
           data-testid="message-input"
         />
-        <button type="submit" data-testid="submit-button">
+        <SubmitButton type="submit" data-testid="submit-button">
           Send Message
-        </button>
+        </SubmitButton>
       </ContactForm>
     </ContactFormContainer>
   );

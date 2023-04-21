@@ -41,10 +41,10 @@ const Background = styled.div`
 
 const MainBox = styled.div`
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   width: 100%;
   max-width: 64rem;
-  height: 200px;
+  height: 30vh;
   max-height: 100%;
   border-radius: 0.25rem;
   overflow: hidden;
@@ -62,6 +62,25 @@ const ScrollContainer = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 0.25rem;
+
+  /* Custom scrollbar styles for WebKit-based browsers */
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.1rem;
+  }
+  /* Custom scrollbar styles for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
 `;
 
 const CardSection = styled.section`

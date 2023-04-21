@@ -19,7 +19,7 @@ const TechStackCardItem = styled.li`
   padding: 4px 8px;
   margin: 4px;
   background-color: var(--bg-secondary-color);
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
 `;
 
 export default function TechStackCard({ techSkills }) {
