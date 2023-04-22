@@ -1,17 +1,24 @@
 import { useEffect, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import MemojiScene from "./lib/MemojiScene";
+import MemojiScene from "./lib/Unam3dScene";
 import * as THREE from "three";
 import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
 
 const StyledCanvas = styled.canvas``;
 
 export default function Unam3d() {
   const mixer = useRef();
   const clock = useRef(new THREE.Clock());
+  const containerRef = useRef();
 
   useEffect(() => {
-    const test = new MemojiScene("memoji3d");
+    const test = new MemojiScene("memoji3d", containerRef.current);
     test.initialize();
     test.animate();
 
@@ -22,7 +29,7 @@ export default function Unam3d() {
       loadedModel = gltfScene;
       gltfScene.scene.position.y = -4.8;
       gltfScene.scene.rotation.y = Math.PI / 5;
-      gltfScene.scene.scale.set(6, 6, 6);
+      gltfScene.scene.scale.set(4, 4, 4);
       test.scene.add(gltfScene.scene);
       const animations = gltfScene.animations;
       mixer.current = new THREE.AnimationMixer(gltfScene.scene);
@@ -46,10 +53,9 @@ export default function Unam3d() {
 
   return (
     <>
-      <StyledCanvas id="memoji3d" />
+      <StyledContainer ref={containerRef}>
+        <StyledCanvas id="memoji3d" />
+      </StyledContainer>
     </>
   );
 }
-
-// memojiheadbopnohand.glb
-// ./assets/model(2).glb

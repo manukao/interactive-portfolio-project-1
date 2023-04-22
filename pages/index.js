@@ -85,6 +85,7 @@ const ScrollContainer = styled.div`
 `;
 
 const CardSection = styled.section`
+  position: relative;
   height: 100%;
   width: 100%;
   scroll-snap-align: start;

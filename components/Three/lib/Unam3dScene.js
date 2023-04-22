@@ -2,6 +2,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "three/examples/jsm/libs/stats.module";
 
+// NOTE: This is a class that is used to initialize a Three.js app.
+
 export default class MemojiScene {
   constructor(canvasId) {
     // NOTE: Core components to initialize Three.js app.

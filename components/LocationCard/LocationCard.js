@@ -9,6 +9,7 @@ const LocationCardContainer = styled.div`
   display: flex;
   position: relative;
   flex: 1;
+  padding: 1px;
 `;
 
 const MapContainer = styled.div`

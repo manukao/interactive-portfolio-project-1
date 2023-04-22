@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-import SceneInit from "./lib/MemojiScene";
+import SceneInit from "./lib/Unam3dScene";
 
 export default function TESTTESTTEST() {
   useEffect(() => {
