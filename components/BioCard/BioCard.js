@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import Typewriter from "../Typewriter/Typewriter";
 
 const BioCardContainer = styled.div`
   display: flex;
@@ -37,9 +36,7 @@ export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
       <BioCardText>
-        <Typewriter
-          text={`Hi, I am ${developer.name}.\n${developer.infoText}`}
-        />
+        Hi, I am {developer.name}. {developer.infoText}
       </BioCardText>
       <InfoTagList>
         {developer.infoTags.map((tag) => (

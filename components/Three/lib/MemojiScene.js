@@ -58,7 +58,7 @@ export default class MemojiScene {
     //this.controls.minAzimuthAngle = -Math.PI / 15;
     //this.controls.maxAzimuthAngle = Math.PI / 15;
 
-    this.controls.enableZoom = false; // Disable zooming in and out
+    this.controls.enableZoom = true; // Disable zooming in and out
 
     // ambient light which is for the whole scene
     this.ambientLight = new THREE.AmbientLight(0xffffff, 0.5);

@@ -11,7 +11,7 @@ export default createGlobalStyle`
     --color-primary: rgb(255 255 255);
     --color-secondary: rgb(2 238 139);
     --border-radius: 0.25rem;
-    --background-color: rgba(32, 32, 32, 0.8);
+    --background-color: rgba(32, 32, 32, 0.1);
     --bg-secondary-color: rgba(64, 64, 64, 0.8);
   }
 

@@ -9,23 +9,13 @@ import ContactCardForm from "../components/ContactCard/ContactCardForm";
 import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
 import Footer from "../components/Footer/Footer";
-import Memoji from "../components/Three/Memoji";
+import Unam3d from "../components/Three/unam3d";
 
 const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   max-height: 100vh;
-`;
-
-const TestCard = styled.div`
-  height: 200px;
-  width: 100%;
-  background-color: var(--background-color);
-  margin-top: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const HeaderContainer = styled.div`
@@ -86,7 +76,7 @@ const ScrollContainer = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--color-secondary);
     border-radius: 0.1rem;
   }
   /* Custom scrollbar styles for Firefox */
@@ -116,7 +106,7 @@ export default function HomePage() {
           <PanoramaViewer />
         </Background>
         <HeaderContainer />
-        <Memoji />
+        <Unam3d />
         <MainBox>
           <ScrollContainer>
             <CardSection>
