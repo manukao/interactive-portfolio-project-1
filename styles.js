@@ -24,7 +24,7 @@ export default createGlobalStyle`
     max-height: 100vh;
     flex-direction: column;
     transition: color 200ms;
-    background-color: rgb(32 32 32/var(--tw-bg-opacity));
+    background-color: rgb(32 32 32);
     color: var(--color-primary);
     font-size: small;
   }

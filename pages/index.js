@@ -8,7 +8,6 @@ import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
 import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
-import Footer from "../components/Footer/Footer";
 import Unam3d from "../components/Three/unam3d";
 
 const HomePageContainer = styled.div`
@@ -16,18 +15,6 @@ const HomePageContainer = styled.div`
   flex-direction: column;
   height: 100%;
   max-height: 100vh;
-`;
-
-const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
-  background-color: var(--background-color);
-  color: var(--color-primary);
-  position: fixed;
-  top: 0;
-  width: 100%;
 `;
 
 const Background = styled.div`
@@ -106,7 +93,6 @@ export default function HomePage() {
         <Background>
           <PanoramaViewer />
         </Background>
-        <HeaderContainer />
         <Unam3d />
         <MainBox>
           <ScrollContainer>
@@ -137,10 +123,6 @@ export default function HomePage() {
             </CardSection>
           </ScrollContainer>
         </MainBox>
-        <Footer
-          gitHubLink={developer.socials.gitHub}
-          linkedInLink={developer.socials.linkedIn}
-        />
       </HomePageContainer>
     </>
   );
