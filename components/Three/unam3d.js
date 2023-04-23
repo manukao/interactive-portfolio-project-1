@@ -29,7 +29,7 @@ export default function Unam3d() {
       loadedModel = gltfScene;
       gltfScene.scene.position.y = -4.8;
       gltfScene.scene.rotation.y = Math.PI / 5;
-      gltfScene.scene.scale.set(4, 4, 4);
+      //gltfScene.scene.scale.set(4, 4, 4);
       test.scene.add(gltfScene.scene);
       const animations = gltfScene.animations;
       mixer.current = new THREE.AnimationMixer(gltfScene.scene);
