@@ -3,7 +3,18 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Background = styled.div`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  height: 100vh;
+`;
+
+const PanoramaContainer = styled.div`
   height: 100%;
   width: 100%;
 `;
@@ -84,5 +95,11 @@ export default function PanoramaViewer() {
     };
   }, []);
 
-  return <Container ref={containerRef} />;
+  return (
+    <>
+      <Background>
+        <PanoramaContainer ref={containerRef} />
+      </Background>
+    </>
+  );
 }

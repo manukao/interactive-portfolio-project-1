@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import Logo from "./Logo";
+import developer from "../developer";
 
 const HeaderContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 64px;
-  background-color: var(--background-color);
+  height: 3rem;
   color: var(--color-primary);
   position: fixed;
   top: 0;
@@ -15,7 +16,7 @@ const HeaderContainer = styled.div`
 export default function Header() {
   return (
     <HeaderContainer>
-      <h1>Header</h1>
+      <Logo logoText={developer.logoText} />
     </HeaderContainer>
   );
 }

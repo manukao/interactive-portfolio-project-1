@@ -35,7 +35,7 @@ export default class MemojiScene {
       1,
       1000
     );
-    this.camera.position.z = 30;
+    this.camera.position.z = 50;
 
     // NOTE: Specify a canvas which is already created in the HTML.
     const canvas = document.getElementById(this.canvasId);
@@ -55,12 +55,12 @@ export default class MemojiScene {
     this.stats = Stats();
 
     // NOTE: Control the min/max rotation
-    //this.controls.minPolarAngle = Math.PI / 2 - 0.1; // Minimum angle from top view
-    //this.controls.maxPolarAngle = Math.PI / 2 + 0.1; // Maximum angle from top view
-    //this.controls.minAzimuthAngle = -Math.PI / 15;
-    //this.controls.maxAzimuthAngle = Math.PI / 15;
+    this.controls.minPolarAngle = Math.PI / 2 - 0.1; // Minimum angle from top view
+    this.controls.maxPolarAngle = Math.PI / 2 + 0.1; // Maximum angle from top view
+    this.controls.minAzimuthAngle = -Math.PI / 20;
+    this.controls.maxAzimuthAngle = Math.PI / 20;
 
-    this.controls.enableZoom = true; // Disable zooming in and out
+    this.controls.enableZoom = false; // Disable zooming in and out
 
     // ambient light which is for the whole scene
     this.ambientLight = new THREE.AmbientLight(0xffffff, 0.5);

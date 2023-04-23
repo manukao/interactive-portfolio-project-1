@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import MemojiScene from "./lib/Unam3dScene";
+import MemojiScene from "./scenes/Unam3dScene";
 import * as THREE from "three";
 import styled from "styled-components";
 
@@ -10,7 +10,12 @@ const StyledContainer = styled.div`
   position: relative;
 `;
 
-const StyledCanvas = styled.canvas``;
+const StyledCanvas = styled.canvas`
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 30%;
+`;
 
 export default function Unam3d() {
   const mixer = useRef();
@@ -25,11 +30,12 @@ export default function Unam3d() {
     let loadedModel;
 
     const glftLoader = new GLTFLoader();
-    glftLoader.load("./assets/unam3d/unampushups.glb", (gltfScene) => {
+    glftLoader.load("./assets/unam3d/unammemoji.glb", (gltfScene) => {
       loadedModel = gltfScene;
-      gltfScene.scene.position.y = -4.8;
-      gltfScene.scene.rotation.y = Math.PI / 5;
-      //gltfScene.scene.scale.set(4, 4, 4);
+      gltfScene.scene.position.y = -6;
+      //gltfScene.scene.rotation.y = Math.PI / 5;
+      gltfScene.scene.rotation.x = Math.PI / 0.51;
+      //gltfScene.scene.scale.set(1, 1, 1);
       test.scene.add(gltfScene.scene);
       const animations = gltfScene.animations;
       mixer.current = new THREE.AnimationMixer(gltfScene.scene);
