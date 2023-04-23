@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import CoolButton from "../button";
 
 const ContactFormContainer = styled.div`
   padding: 4px 4px;
@@ -135,9 +136,9 @@ export default function ContactCardForm() {
           maxLength={150}
           data-testid="message-input"
         />
-        <SubmitButton type="submit" data-testid="submit-button">
+        <CoolButton type="submit" data-testid="submit-button">
           Send Message
-        </SubmitButton>
+        </CoolButton>
       </ContactForm>
     </ContactFormContainer>
   );

@@ -36,7 +36,7 @@ const ScrollContainer = styled.div`
 
   /* Custom scrollbar styles for WebKit-based browsers */
   &::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 0.3rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -47,11 +47,11 @@ const ScrollContainer = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-secondary);
-    border-radius: 0.1rem;
+    border-radius: 0.25rem;
   }
   /* Custom scrollbar styles for Firefox */
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.1);
+  scrollbar-color: var(--color-secondary) var(--background-color);
 `;
 
 const CardSection = styled.section`

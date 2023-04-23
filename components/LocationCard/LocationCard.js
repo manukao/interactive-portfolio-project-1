@@ -5,17 +5,29 @@ import WeatherBadge from "./WeatherBadge";
 import LocalTime from "./LocalTime";
 import { useRouter } from "next/router";
 
+const LocationCardWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
 const LocationCardContainer = styled.div`
   display: flex;
   position: relative;
-  flex: 1;
-  padding: 1px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  height: 90%;
+  width: 90%;
 `;
 
 const MapContainer = styled.div`
   width: 100%;
   height: 100%;
   opacity: 0.8;
+  border-radius: var(--border-radius);
 `;
 
 const WeatherBadgeContainer = styled.div`
@@ -40,7 +52,7 @@ const Badge = styled.div`
   border-radius: var(--border-radius);
   padding: 2px 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  background-color: var(--background-color);
+  background-color: var(--bg-secondary-color);
 `;
 
 export default function LocationCard({ location }) {
@@ -84,18 +96,20 @@ export default function LocationCard({ location }) {
   }, [lat, lng, zoom, router.pathname]);
 
   return (
-    <LocationCardContainer>
-      <MapContainer ref={mapContainer} data-testid="map-container" />
-      <WeatherBadgeContainer data-testid="weather-badge-container">
-        <Badge>
-          <WeatherBadge location={location} />
-        </Badge>
-      </WeatherBadgeContainer>
-      <TimeBadgeContainer data-testid="time-badge-container">
-        <Badge>
-          <LocalTime timezone={location.timezone} />
-        </Badge>
-      </TimeBadgeContainer>
-    </LocationCardContainer>
+    <LocationCardWrapper>
+      <LocationCardContainer>
+        <MapContainer ref={mapContainer} data-testid="map-container" />
+        <WeatherBadgeContainer data-testid="weather-badge-container">
+          <Badge>
+            <WeatherBadge location={location} />
+          </Badge>
+        </WeatherBadgeContainer>
+        <TimeBadgeContainer data-testid="time-badge-container">
+          <Badge>
+            <LocalTime timezone={location.timezone} />
+          </Badge>
+        </TimeBadgeContainer>
+      </LocationCardContainer>
+    </LocationCardWrapper>
   );
 }

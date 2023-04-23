@@ -52,6 +52,7 @@ const FooterIcon = styled.a`
   opacity: 0.5;
   &:hover {
     opacity: 1;
+    color: var(--color-secondary);
   }
 `;
 

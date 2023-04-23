@@ -7,31 +7,36 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+
+
   :root {
     --color-primary: rgb(255 255 255);
     --color-secondary: rgb(2 238 139);
     --border-radius: 0.25rem;
     --background-color: rgba(32, 32, 32, 0.8);
-    --bg-secondary-color: rgba(64, 64, 64, 0.8);
+    --bg-secondary-color: rgba(64, 64, 64, 0.5);
   }
+
+  ::selection {
+  background-color: var(--color-secondary);
+}
+
+a:active {
+  background-color: var(--color-secondary);
+}
 
   body {
     margin: 0;
     padding-top: 3rem;
     font-family: system-ui;
-    overflow: hidden;
     display: flex;
-    height: 100%;
-    max-height: 100vh;
+    overflow: hidden;
     flex-direction: column;
     transition: color 200ms;
     background-color: rgb(32 32 32);
     color: var(--color-primary);
     font-size: small;
   }
-
-
-    
 
 /* ProjectsCard custom flash class on index change */
 .flash {
