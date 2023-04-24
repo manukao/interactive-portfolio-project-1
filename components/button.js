@@ -1,18 +1,17 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Pushable = styled.button`
   position: relative;
-  opacity: 0.7;
+  opacity: 0.8;
   border: none;
   background: transparent;
   padding: 0;
-  cursor: pointer;
   outline-offset: 4px;
   transition: filter 250ms;
 
   &:hover {
-    filter: brightness(110%);
+    opacity: 1;
   }
 
   &:focus:not(:focus-visible) {
@@ -53,8 +52,8 @@ const Edge = styled.span`
   background: linear-gradient(
     to left,
     var(--background-color) 0%,
-    var(--color-secondary) 8%,
-    var(--color-secondary) 92%,
+    var(--color-secondary) 4%,
+    var(--color-secondary) 96%,
     var(--background-color) 100%
   );
 `;
@@ -62,16 +61,16 @@ const Edge = styled.span`
 const Front = styled.span`
   display: block;
   position: relative;
-  padding: 8px 16px;
+  padding: 4px 16px;
   border-radius: var(--border-radius);
   color: var(--color-primary);
   background: var(--color-secondary);
   will-change: transform;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 
   ${Pushable}:hover & {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
   }
 

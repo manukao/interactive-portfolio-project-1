@@ -7,35 +7,44 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-
+  html {
+    background-color: black;
+  }
 
   :root {
-    --color-primary: rgb(255 255 255);
+    --color-primary: rgb(225 225 225);
     --color-secondary: rgb(2 238 139);
     --border-radius: 0.25rem;
-    --background-color: rgba(32, 32, 32, 0.8);
+    --background-color: rgba(32, 32, 32, 0);
     --bg-secondary-color: rgba(64, 64, 64, 0.5);
   }
 
   ::selection {
-  background-color: var(--color-secondary);
-}
+    background-color: var(--color-secondary);
+  }
 
-a:active {
-  background-color: var(--color-secondary);
-}
+  a:active {
+    background-color: var(--color-secondary);
+  }
+
+  ::placeholder {
+    font-size: small;
+    font-family: system-ui;
+    color: var(--color-primary);
+    opacity: 0.8;
+  }
 
   body {
     margin: 0;
     padding-top: 3rem;
     font-family: system-ui;
+    font-size: small;
     display: flex;
     overflow: hidden;
     flex-direction: column;
     transition: color 200ms;
-    background-color: rgb(32 32 32);
+    background-color: var(--background-color);
     color: var(--color-primary);
-    font-size: small;
   }
 
 /* ProjectsCard custom flash class on index change */

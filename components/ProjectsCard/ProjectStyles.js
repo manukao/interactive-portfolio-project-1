@@ -47,12 +47,10 @@ export const ProjectSliderRightSide = styled.div`
 
 export const ProjectStatus = styled.div`
   position: absolute;
-  top: 0.1rem;
-  right: 0.1rem;
+  top: 0.5rem;
+  right: 0.5rem;
   display: inline-block;
-  font-size: 0.75rem;
   padding: 2px 4px;
-  margin: 2px;
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius);
 `;
