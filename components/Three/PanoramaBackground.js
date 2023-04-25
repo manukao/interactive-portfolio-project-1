@@ -45,54 +45,59 @@ export default function PanoramaViewer() {
     container.appendChild(renderer.domElement);
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("/assets/background3d/jungle.jpeg");
 
-    const geometry = new THREE.SphereGeometry(500, 60, 40);
-    geometry.scale(-1, 1, 1);
-
-    const material = new THREE.MeshBasicMaterial({
-      map: texture,
+    loader.load("/assets/background3d/jungle.jpeg", (texture) => {
+      initPanorama(texture);
     });
 
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+    function initPanorama(texture) {
+      const geometry = new THREE.SphereGeometry(500, 60, 40);
+      geometry.scale(-1, 1, 1);
 
-    camera.position.set(0, 0, 0.1);
+      const material = new THREE.MeshBasicMaterial({
+        map: texture,
+      });
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
-    controls.enablePan = false;
-    controls.rotateSpeed = 0.3;
+      const sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
 
-    const onWindowResize = () => {
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    };
+      camera.position.set(0, 0, 0.1);
 
-    window.addEventListener("resize", onWindowResize, false);
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
+      controls.enablePan = false;
+      controls.rotateSpeed = 0.3;
 
-    let lastTime = 0;
-    const rotationSpeed = 0.00005;
+      const onWindowResize = () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      };
 
-    const animate = (time) => {
-      const delta = time - lastTime;
-      lastTime = time;
-      requestAnimationFrame(animate);
+      window.addEventListener("resize", onWindowResize, false);
 
-      sphere.rotation.y += rotationSpeed * delta;
+      let lastTime = 0;
+      const rotationSpeed = 0.00005;
 
-      controls.update();
-      renderer.render(scene, camera);
-    };
+      const animate = (time) => {
+        const delta = time - lastTime;
+        lastTime = time;
+        requestAnimationFrame(animate);
 
-    animate(0);
+        sphere.rotation.y += rotationSpeed * delta;
 
-    return () => {
-      window.removeEventListener("resize", onWindowResize, false);
-      renderer.dispose();
-      controls.dispose();
-    };
+        controls.update();
+        renderer.render(scene, camera);
+      };
+
+      animate(0);
+
+      return () => {
+        window.removeEventListener("resize", onWindowResize, false);
+        renderer.dispose();
+        controls.dispose();
+      };
+    }
   }, []);
 
   return (

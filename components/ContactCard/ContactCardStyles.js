@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ContactFormContainer = styled.div`
+export const ContactFormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,60 +8,68 @@ const ContactFormContainer = styled.div`
   height: 100%;
 `;
 
-const ContactFormTitleContainer = styled.div`
+export const ContactFormTitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 2rem;
 `;
 
-const ContactFormTitle = styled.div`
+export const ContactFormTitle = styled.div`
   font-weight: 600;
 `;
 
-const ContactForm = styled.form`
+export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
 `;
 
-const FormInputsContainer = styled.div`
+export const FormInputsContainer = styled.div`
   display: flex;
   font-size: x-small;
 `;
 
-const InputsContainer = styled.div`
+export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 6px;
 `;
 
-const NameContainer = styled.div`
+export const NameContainer = styled.div`
   width: 100%;
   padding: 4px 8px;
 `;
 
-const EmailContainer = styled.div`
+export const EmailContainer = styled.div`
   width: 100%;
   padding: 4px 8px;
 `;
 
-const MessageContainer = styled.div`
+export const MessageContainer = styled.div`
   width: 100%;
   padding: 4px 8px;
 `;
 
-const SubmitButtonContainer = styled.div`
+export const SubmitButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   padding: 16px;
   margin-top: 8px;
 `;
 
-const InputLabel = styled.label``;
+export const ThankYouMessage = styled.div`
+  color: var(--color-secondary);
+  position: absolute;
+  font-size: xx-small;
+  right: 5rem;
+`;
 
-const TextInput = styled.input`
+export const InputLabel = styled.label``;
+
+export const TextInput = styled.input`
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius);
   border: none;
@@ -79,7 +87,7 @@ const TextInput = styled.input`
   }
 `;
 
-const MessageInput = styled.textarea`
+export const MessageInput = styled.textarea`
   resize: none;
   width: 100%;
   height: 100%;
@@ -108,19 +116,3 @@ const MessageInput = styled.textarea`
     background-color: var(--color-secondary);
   }
 `;
-
-export {
-  ContactFormContainer,
-  ContactFormTitleContainer,
-  ContactFormTitle,
-  ContactForm,
-  FormInputsContainer,
-  InputsContainer,
-  NameContainer,
-  EmailContainer,
-  MessageContainer,
-  SubmitButtonContainer,
-  InputLabel,
-  TextInput,
-  MessageInput,
-};

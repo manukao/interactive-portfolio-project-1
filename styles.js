@@ -7,15 +7,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html {
-    background-color: black;
-  }
-
   :root {
     --color-primary: rgb(225 225 225);
     --color-secondary: rgb(2 238 139);
     --border-radius: 0.25rem;
-    --background-color: rgba(32, 32, 32, 0);
+    --background-color: rgba(32, 32, 32, 0.8);
     --bg-secondary-color: rgba(64, 64, 64, 0.5);
   }
 
@@ -36,9 +32,9 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    padding-top: 3rem;
     font-family: system-ui;
     font-size: small;
+    top: 3rem;
     display: flex;
     overflow: hidden;
     flex-direction: column;

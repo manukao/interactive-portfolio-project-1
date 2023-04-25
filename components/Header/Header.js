@@ -20,7 +20,6 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Logo logoText={developer.logoText} />
-      <>la la la ...</>
     </HeaderContainer>
   );
 }

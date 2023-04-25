@@ -14,6 +14,7 @@ import {
   InputLabel,
   TextInput,
   MessageInput,
+  ThankYouMessage,
 } from "./ContactCardStyles";
 
 export default function ContactCardForm() {
@@ -22,6 +23,8 @@ export default function ContactCardForm() {
     email: "",
     message: "",
   });
+
+  const [showThankYouMessage, setShowThankYouMessage] = useState(false);
 
   const handleChange = (submitEvent) => {
     setFormData({
@@ -41,7 +44,10 @@ export default function ContactCardForm() {
         body: JSON.stringify(formData),
       });
       setFormData({ name: "", email: "", message: "" });
-      alert("Thank you for your message! I'll get back to you asap.");
+      setShowThankYouMessage(true);
+      setTimeout(() => {
+        setShowThankYouMessage(false);
+      }, 3000);
     } catch (error) {
       console.error(error);
       alert(
@@ -68,6 +74,7 @@ export default function ContactCardForm() {
                 onChange={handleChange}
                 required
                 maxLength={15}
+                autocomplete="off"
               />
             </NameContainer>
             <EmailContainer>
@@ -80,6 +87,7 @@ export default function ContactCardForm() {
                 onChange={handleChange}
                 required
                 maxLength={50}
+                autocomplete="off"
               />
             </EmailContainer>
           </InputsContainer>
@@ -92,6 +100,7 @@ export default function ContactCardForm() {
               onChange={handleChange}
               required
               maxLength={150}
+              autocomplete="off"
             />
           </MessageContainer>
         </FormInputsContainer>
@@ -99,6 +108,7 @@ export default function ContactCardForm() {
           <CoolButton type="submit" data-testid="submit-button">
             Send
           </CoolButton>
+          {showThankYouMessage && <ThankYouMessage>Thanks!</ThankYouMessage>}
         </SubmitButtonContainer>
       </ContactForm>
     </ContactFormContainer>

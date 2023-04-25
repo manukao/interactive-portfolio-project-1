@@ -11,7 +11,7 @@ import styled from "styled-components";
 import Unam3d from "../components/Three/unam3d";
 
 const MainBox = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
   width: 100%;
   max-width: 64rem;
