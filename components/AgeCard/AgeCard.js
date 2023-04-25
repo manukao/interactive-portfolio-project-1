@@ -17,7 +17,11 @@ const AgeCardDescription = styled.div`
   text-align: center;
   color: var(--primary-color);
   z-index: 10;
-  width: 50%;
+  width: 40%;
+`;
+
+const AgeCardDescriptionText = styled.p`
+  padding: 12px 12px;
 `;
 
 const AgeCardContainer = styled.div`
@@ -34,7 +38,7 @@ const RemainingDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.1;
+  opacity: 0.5;
   font-size: xx-small;
 `;
 
@@ -73,7 +77,7 @@ const UsedDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.3;
+  opacity: 0.5;
   border-radius: 0.25rem;
   font-size: xx-small;
 `;
@@ -107,8 +111,9 @@ export default function AgeCard({ ageOfDeveloper }) {
   return (
     <AgeCardContainerWrapper>
       <AgeCardDescription>
-        <h1>Age</h1>
-        <p>How old are you?</p>
+        <AgeCardDescriptionText>
+          Time`s precious. Enter your birthday.
+        </AgeCardDescriptionText>
       </AgeCardDescription>
       <AgeCardContainer>
         <RemainingDiv remainingHeight={remainingHeight}>
