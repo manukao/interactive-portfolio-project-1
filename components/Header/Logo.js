@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 
 const LogoBadge = styled.h1`
   padding-bottom: 4px;
-  font-size: xx-large;
 `;
 
 const LogoLink = styled.a`

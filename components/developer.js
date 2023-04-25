@@ -1,5 +1,5 @@
 const developer = {
-  avatar: "/assets/avatar.png",
+  avatar: "/assets/avatar1.png",
   name: "Manu",
   logoText: "unam",
   age: 33,

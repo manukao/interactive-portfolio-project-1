@@ -15,7 +15,7 @@ const MainBox = styled.div`
   position: fixed;
   bottom: 3rem;
   width: 100%;
-  max-width: 64rem;
+  max-width: 48rem;
   height: 25vh;
   max-height: 100%;
   border-radius: 0.25rem;

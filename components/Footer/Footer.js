@@ -29,6 +29,7 @@ const FooterLink = styled.a`
   text-decoration: none;
   opacity: 0.5;
   &:hover {
+    color: var(--color-secondary);
     opacity: 1;
   }
 `;

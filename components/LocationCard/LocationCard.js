@@ -19,8 +19,8 @@ const LocationCardContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius);
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 `;
 
 const MapContainer = styled.div`

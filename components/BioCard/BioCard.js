@@ -14,7 +14,7 @@ const BioCardContainer = styled.div`
 
 const BioCardAvatar = styled(Image)`
   width: auto;
-  height: 100px;
+  height: 70px;
 `;
 
 const BioCardText = styled.div``;
@@ -37,8 +37,8 @@ export default function BioCard({ developer }) {
       <BioCardAvatar
         src={developer.avatar}
         alt={developer.name}
-        width={50}
-        height={50}
+        width={512}
+        height={512}
       />
       <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}
