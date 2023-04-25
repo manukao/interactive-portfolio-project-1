@@ -68,13 +68,14 @@ const FooterIcon = styled.a`
 
 export default function Footer({ gitHubLink, linkedInLink }) {
   return (
-    <FooterContainer>
-      <FooterLinkContainer>
+    <FooterContainer role="contentinfo">
+      <FooterLinkContainer aria-label="Footer links">
         <FooterLink
           href=""
           target="_blank"
           rel="noopener noreferrer"
           data-testid=""
+          aria-label="Legal information"
         >
           Legal
         </FooterLink>
@@ -83,31 +84,34 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           target="_blank"
           rel="noopener noreferrer"
           data-testid=""
+          aria-label="Privacy policy"
         >
           Privacy
         </FooterLink>
 
-        <FooterLinkCTA href="#contact" data-testid="">
-          <IoChatbubblesOutline size={12} />
+        <FooterLinkCTA href="#contact" data-testid="" aria-label="Message me">
+          <IoChatbubblesOutline size={12} aria-hidden="true" />
           <FooterLinkCTAText>Message me</FooterLinkCTAText>
         </FooterLinkCTA>
       </FooterLinkContainer>
-      <FooterIconContainer>
+      <FooterIconContainer aria-label="Social media links">
         <FooterIcon
           href={gitHubLink}
           target="_blank"
           rel="noopener noreferrer"
           data-testid="github-link"
+          aria-label="Visit my GitHub profile"
         >
-          <VscGithub size={16} />
+          <VscGithub size={16} aria-hidden="true" />
         </FooterIcon>
         <FooterIcon
           href={linkedInLink}
           target="_blank"
           rel="noopener noreferrer"
           data-testid="linkedin-link"
+          aria-label="Visit my LinkedIn profile"
         >
-          <RiLinkedinBoxLine size={18} />
+          <RiLinkedinBoxLine size={18} aria-hidden="true" />
         </FooterIcon>
       </FooterIconContainer>
     </FooterContainer>

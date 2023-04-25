@@ -57,11 +57,13 @@ export default function ContactCardForm() {
   };
 
   return (
-    <ContactFormContainer>
+    <ContactFormContainer role="form">
       <ContactFormTitleContainer>
-        <ContactFormTitle>Drop me a message.</ContactFormTitle>
+        <ContactFormTitle id="contact-form-title">
+          Drop me a message.
+        </ContactFormTitle>
       </ContactFormTitleContainer>
-      <ContactForm onSubmit={handleSubmit}>
+      <ContactForm onSubmit={handleSubmit} aria-labelledby="contact-form-title">
         <FormInputsContainer>
           <InputsContainer>
             <NameContainer>
@@ -74,7 +76,7 @@ export default function ContactCardForm() {
                 onChange={handleChange}
                 required
                 maxLength={15}
-                autocomplete="off"
+                aria-required="true"
               />
             </NameContainer>
             <EmailContainer>
@@ -87,7 +89,7 @@ export default function ContactCardForm() {
                 onChange={handleChange}
                 required
                 maxLength={50}
-                autocomplete="off"
+                aria-required="true"
               />
             </EmailContainer>
           </InputsContainer>
@@ -100,7 +102,7 @@ export default function ContactCardForm() {
               onChange={handleChange}
               required
               maxLength={150}
-              autocomplete="off"
+              aria-required="true"
             />
           </MessageContainer>
         </FormInputsContainer>
@@ -109,10 +111,15 @@ export default function ContactCardForm() {
             buttonContent={".send"}
             type="submit"
             data-testid="submit-button"
+            aria-label="Submit Contact Form"
           >
             Send
           </CoolButton>
-          {showThankYouMessage && <ThankYouMessage>Thanks!</ThankYouMessage>}
+          {showThankYouMessage && (
+            <ThankYouMessage role="alert" aria-live="assertive">
+              Thanks!
+            </ThankYouMessage>
+          )}
         </SubmitButtonContainer>
       </ContactForm>
     </ContactFormContainer>

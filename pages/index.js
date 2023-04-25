@@ -83,10 +83,10 @@ export default function HomePage() {
       <PanoramaViewer />
       <MainBox>
         <ScrollContainer>
-          <CardSection>
+          <CardSection id="about">
             <BioCard developer={developer} />
           </CardSection>
-          <CardSection>
+          <CardSection id="skills">
             <TechStackCard techSkills={developer.techSkills} />
           </CardSection>
           <CardSection>
@@ -99,7 +99,7 @@ export default function HomePage() {
               <AgeCard ageOfDeveloper={developer.age} />
             </CardWrapper>
           </CardSection>
-          <CardSection>
+          <CardSection id="projects">
             <ProjectsCard projects={developer.projects} />
           </CardSection>
           <CardSection>
