@@ -8,6 +8,7 @@ import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
 import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
+import Head from "next/head";
 import Unam3d from "../components/Three/unam3d";
 
 const MainBox = styled.div`
@@ -72,6 +73,13 @@ const CardWrapper = styled.div`
 export default function HomePage() {
   return (
     <>
+      <Head>
+        <title>Unam</title>
+        <meta
+          name="description"
+          content="Hi, I am Manu - Web dev adventurer and dad with a passion for all things tech. Check out my portfolio and get in touch!"
+        />
+      </Head>
       <PanoramaViewer />
       <MainBox>
         <ScrollContainer>

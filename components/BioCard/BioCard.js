@@ -18,7 +18,9 @@ const BioCardAvatar = styled(Image)`
   border-radius: 50%;
 `;
 
-const BioCardText = styled.div``;
+const BioCardText = styled.div`
+  padding: 4px 4px;
+`;
 
 const InfoTagList = styled.ul`
   padding: 0;
