@@ -112,7 +112,7 @@ export default function AgeCard({ ageOfDeveloper }) {
     <AgeCardContainerWrapper>
       <AgeCardDescription>
         <AgeCardDescriptionText>
-          Time`s precious. Enter your birthday.
+          Time`s precious. Enter your age.
         </AgeCardDescriptionText>
       </AgeCardDescription>
       <AgeCardContainer>
