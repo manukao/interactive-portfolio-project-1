@@ -34,6 +34,7 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
     top: 3rem;
+    font-size: small;
     display: flex;
     overflow: hidden;
     flex-direction: column;

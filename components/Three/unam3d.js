@@ -10,7 +10,6 @@ const StyledContainer = styled.div`
 
 const StyledCanvas = styled.canvas`
   width: 100%;
-  background-color: #000;
 `;
 
 export default function Unam3d() {
@@ -26,7 +25,7 @@ export default function Unam3d() {
     let loadedModel;
 
     const glftLoader = new GLTFLoader();
-    glftLoader.load("./assets/unam3d/unamkick.glb", (gltfScene) => {
+    glftLoader.load("./assets/unam3d/unammemoji.glb", (gltfScene) => {
       loadedModel = gltfScene;
       gltfScene.scene.position.y = -3;
       //gltfScene.scene.rotation.y = Math.PI / 5;

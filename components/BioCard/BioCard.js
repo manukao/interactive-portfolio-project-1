@@ -13,14 +13,11 @@ const BioCardContainer = styled.div`
 `;
 
 const BioCardAvatar = styled(Image)`
-  width: 100px;
+  width: auto;
   height: 100px;
-  border-radius: 50%;
 `;
 
-const BioCardText = styled.div`
-  padding: 4px 4px;
-`;
+const BioCardText = styled.div``;
 
 const InfoTagList = styled.ul`
   padding: 0;
@@ -37,6 +34,12 @@ const InfoTag = styled.li`
 export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
+      <BioCardAvatar
+        src={developer.avatar}
+        alt={developer.name}
+        width={50}
+        height={50}
+      />
       <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}
       </BioCardText>
@@ -48,12 +51,3 @@ export default function BioCard({ developer }) {
     </BioCardContainer>
   );
 }
-
-/*
-<BioCardAvatar
-        src={developer.avatar}
-        alt={developer.name}
-        width={100}
-        height={100}
-      />
-      */

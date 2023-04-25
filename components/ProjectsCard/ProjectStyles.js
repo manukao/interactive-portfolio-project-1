@@ -49,6 +49,7 @@ export const ProjectSliderRightSide = styled.div`
 
 export const ProjectStatus = styled.div`
   position: absolute;
+  font-size: x-small;
   top: 0.5rem;
   right: 0.5rem;
   display: inline-block;
