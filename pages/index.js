@@ -13,7 +13,7 @@ import Unam3d from "../components/Three/unam3d";
 
 const MainBox = styled.div`
   position: fixed;
-  bottom: 2rem;
+  bottom: 3rem;
   width: 100%;
   max-width: 64rem;
   height: 25vh;

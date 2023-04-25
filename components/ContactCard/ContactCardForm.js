@@ -105,7 +105,11 @@ export default function ContactCardForm() {
           </MessageContainer>
         </FormInputsContainer>
         <SubmitButtonContainer>
-          <CoolButton type="submit" data-testid="submit-button">
+          <CoolButton
+            buttonContent={".send"}
+            type="submit"
+            data-testid="submit-button"
+          >
             Send
           </CoolButton>
           {showThankYouMessage && <ThankYouMessage>Thanks!</ThankYouMessage>}

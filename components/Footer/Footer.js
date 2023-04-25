@@ -1,5 +1,6 @@
 import { VscGithub } from "react-icons/vsc";
 import { RiLinkedinBoxLine } from "react-icons/ri";
+import { IoChatbubblesOutline } from "react-icons/io5";
 import styled from "styled-components";
 
 const FooterContainer = styled.div`
@@ -8,10 +9,10 @@ const FooterContainer = styled.div`
   justify-content: space-between;
   height: 24px;
   color: black;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  font-size: xx-small;
+  position: absolute;
+  bottom: 0.5rem;
+  width: 100vw;
+  font-size: x-small;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 `;
@@ -19,7 +20,8 @@ const FooterContainer = styled.div`
 const FooterLinkContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.5rem;
+  user-select: none;
 `;
 
 const FooterLink = styled.a`
@@ -33,17 +35,24 @@ const FooterLink = styled.a`
 
 const FooterLinkCTA = styled.a`
   color: var(--color-secondary);
-  text-decoration: underline;
+  display: flex;
+  font-weight: bold;
+  gap: 0.1rem;
   opacity: 0.7;
   &:hover {
     opacity: 1;
   }
 `;
 
+const FooterLinkCTAText = styled.div`
+  text-decoration: underline;
+`;
+
 const FooterIconContainer = styled.div`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: 4px;
+  gap: 0.5rem;
 `;
 
 const FooterIcon = styled.a`
@@ -76,8 +85,10 @@ export default function Footer({ gitHubLink, linkedInLink }) {
         >
           Privacy
         </FooterLink>
+
         <FooterLinkCTA href="#contact" data-testid="">
-          Message me<span> 💬</span>
+          <IoChatbubblesOutline size={12} />
+          <FooterLinkCTAText>Message me</FooterLinkCTAText>
         </FooterLinkCTA>
       </FooterLinkContainer>
       <FooterIconContainer>

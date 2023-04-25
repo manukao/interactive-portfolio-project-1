@@ -80,13 +80,11 @@ const Front = styled.span`
   }
 `;
 
-const CoolButton = () => (
+const CoolButton = ({ buttonContent }) => (
   <Pushable>
     <Shadow />
     <Edge />
-    <Front>
-      send<span>⏎</span>
-    </Front>
+    <Front>{buttonContent}</Front>
   </Pushable>
 );
 
