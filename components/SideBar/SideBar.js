@@ -107,25 +107,25 @@ export default function Sidebar() {
       </ViewButton>
       <NavLinkWrapper href="#about" role="link" aria-label="About">
         <Icon>
-          <FiUser size={16} aria-hidden="true" />
+          <FiUser size aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".about"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#skills" role="link" aria-label="Skills">
         <Icon>
-          <FaRegKeyboard size={16} aria-hidden="true" />
+          <FaRegKeyboard size aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".skills"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#projects" role="link" aria-label="Projects">
         <Icon>
-          <FiCode size={16} aria-hidden="true" />
+          <FiCode size aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".projects"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#contact" role="link" aria-label="Contact">
         <Icon>
-          <IoChatbubblesOutline size={16} aria-hidden="true" />
+          <IoChatbubblesOutline size aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".contact"}
       </NavLinkWrapper>
