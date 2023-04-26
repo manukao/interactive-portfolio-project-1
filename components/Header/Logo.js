@@ -1,8 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const LogoBadge = styled.h1`
-  font-size: x-large;
-`;
+const LogoBadge = styled.h1``;
 
 const LogoLink = styled.a`
   text-decoration: none;

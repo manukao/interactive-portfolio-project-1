@@ -7,30 +7,20 @@ import Head from "next/head";
 import Favicon from "../components/Favicon/Favicon";
 import Sidebar from "../components/SideBar/SideBar";
 
-import { Inter } from "@next/font/google";
-
-const inter = Inter({
-  weight: "400",
-  subsets: ["latin"],
-});
-
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <Favicon />
+      </Head>
+      <GlobalStyle />
       <Header />
-      <main className={inter.className}>
-        <Head>
-          <Favicon />
-        </Head>
-        <GlobalStyle />
-
-        <Sidebar />
-        <Component {...pageProps} />
-        <Footer
-          gitHubLink={developer.socials.gitHub}
-          linkedInLink={developer.socials.linkedIn}
-        />
-      </main>
+      <Sidebar />
+      <Component {...pageProps} />
+      <Footer
+        gitHubLink={developer.socials.gitHub}
+        linkedInLink={developer.socials.linkedIn}
+      />
     </>
   );
 }

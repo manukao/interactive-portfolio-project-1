@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Roboto } from "@next/font/google";
 
 export default createGlobalStyle`
   *,
@@ -23,10 +24,12 @@ export default createGlobalStyle`
     background-color: var(--color-secondary);
   }
 
+  html {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+  }
 
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     top: 3rem;
     font-size: small;
     display: flex;
