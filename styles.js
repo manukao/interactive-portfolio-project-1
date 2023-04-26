@@ -11,7 +11,7 @@ export default createGlobalStyle`
     --color-primary: rgb(225 225 225);
     --color-secondary: rgb(2 238 139);
     --border-radius: 0.25rem;
-    --background-color: rgba(32, 32, 32, 0);
+    --background-color: rgba(32, 32, 32, 0.8);
     --bg-secondary-color: rgba(64, 64, 64, 0.5);
   }
 
@@ -25,7 +25,7 @@ export default createGlobalStyle`
 
   ::placeholder {
     font-size: small;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui,
     color: var(--color-primary);
     opacity: 0.8;
   }
