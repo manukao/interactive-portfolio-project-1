@@ -66,7 +66,7 @@ export default function PanoramaViewer() {
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableZoom = false;
       controls.enablePan = false;
-      controls.rotateSpeed = 0.3;
+      controls.rotateSpeed = -0.3;
 
       const onWindowResize = () => {
         camera.aspect = container.clientWidth / container.clientHeight;

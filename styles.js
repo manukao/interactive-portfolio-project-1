@@ -23,12 +23,6 @@ export default createGlobalStyle`
     background-color: var(--color-secondary);
   }
 
-  ::placeholder {
-    font-size: small;
-    font-family: system-ui,
-    color: var(--color-primary);
-    opacity: 0.8;
-  }
 
   body {
     margin: 0;

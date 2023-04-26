@@ -16,18 +16,21 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={inter.className}>
-      <Head>
-        <Favicon />
-      </Head>
-      <GlobalStyle />
+    <>
       <Header />
-      <Sidebar />
-      <Component {...pageProps} />
-      <Footer
-        gitHubLink={developer.socials.gitHub}
-        linkedInLink={developer.socials.linkedIn}
-      />
-    </main>
+      <main className={inter.className}>
+        <Head>
+          <Favicon />
+        </Head>
+        <GlobalStyle />
+
+        <Sidebar />
+        <Component {...pageProps} />
+        <Footer
+          gitHubLink={developer.socials.gitHub}
+          linkedInLink={developer.socials.linkedIn}
+        />
+      </main>
+    </>
   );
 }

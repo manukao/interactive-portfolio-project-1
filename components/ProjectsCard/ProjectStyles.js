@@ -94,7 +94,7 @@ export const ProjectLeftArrowContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1rem;
   border-radius: var(--border-radius);
   background-color: var(--bg-secondary-color);
   cursor: pointer;
@@ -109,7 +109,7 @@ export const ProjectRightArrowContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1rem;
   border-radius: var(--border-radius);
   background-color: var(--bg-secondary-color);
   cursor: pointer;
