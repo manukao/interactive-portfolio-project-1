@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { FaRegKeyboard } from "react-icons/fa";
-import { FiUser, FiCode, FiMessageCircle } from "react-icons/fi";
+import { FiUser, FiCode } from "react-icons/fi";
 import { IoChatbubblesOutline } from "react-icons/io5";
 
 const Container = styled.div`
@@ -70,16 +70,10 @@ const NavLinkWrapper = styled.a`
 
 export default function Sidebar() {
   const [isShrinkView, setIsShrinkView] = useState(true);
-  //const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleSidebarView = () => {
     setIsShrinkView(!isShrinkView);
   };
-
-  //const handleThemeChange = () => {
-  //  setIsDarkMode(!isDarkMode);
-  //  document.body.classList.toggle("dark");
-  //};
 
   return (
     <Container isShrinkView={isShrinkView}>

@@ -25,14 +25,14 @@ export default createGlobalStyle`
 
   ::placeholder {
     font-size: small;
-    font-family: Roboto, 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--color-primary);
     opacity: 0.8;
   }
 
   body {
     margin: 0;
-    font-family: system-ui;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     top: 3rem;
     font-size: small;
     display: flex;

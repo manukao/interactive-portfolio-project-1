@@ -7,9 +7,16 @@ import Head from "next/head";
 import Favicon from "../components/Favicon/Favicon";
 import Sidebar from "../components/SideBar/SideBar";
 
+import { Bilbo_Swash_Caps } from "@next/font/google";
+
+const inter = Bilbo_Swash_Caps({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <main className={inter.className}>
       <Head>
         <Favicon />
       </Head>
@@ -21,6 +28,6 @@ export default function App({ Component, pageProps }) {
         gitHubLink={developer.socials.gitHub}
         linkedInLink={developer.socials.linkedIn}
       />
-    </>
+    </main>
   );
 }

@@ -68,13 +68,12 @@ const FooterIcon = styled.a`
 
 export default function Footer({ gitHubLink, linkedInLink }) {
   return (
-    <FooterContainer role="contentinfo">
+    <FooterContainer role="footer">
       <FooterLinkContainer aria-label="Footer links">
         <FooterLink
           href=""
           target="_blank"
           rel="noopener noreferrer"
-          data-testid=""
           aria-label="Legal information"
         >
           Legal
@@ -83,7 +82,6 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           href=""
           target="_blank"
           rel="noopener noreferrer"
-          data-testid=""
           aria-label="Privacy policy"
         >
           Privacy
@@ -99,7 +97,6 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           href={gitHubLink}
           target="_blank"
           rel="noopener noreferrer"
-          data-testid="github-link"
           aria-label="Visit my GitHub profile"
         >
           <VscGithub size={16} aria-hidden="true" />
@@ -108,7 +105,6 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           href={linkedInLink}
           target="_blank"
           rel="noopener noreferrer"
-          data-testid="linkedin-link"
           aria-label="Visit my LinkedIn profile"
         >
           <RiLinkedinBoxLine size={18} aria-hidden="true" />
