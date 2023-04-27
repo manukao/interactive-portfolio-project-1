@@ -10,7 +10,6 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "@next/font": "^13.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
