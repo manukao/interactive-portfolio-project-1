@@ -5,6 +5,7 @@ const LogoBadge = styled.h1``;
 const LogoLink = styled.a`
   text-decoration: none;
   color: inherit;
+  user-select: none;
 `;
 
 const gradientAnimation = keyframes`

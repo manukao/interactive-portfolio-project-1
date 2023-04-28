@@ -34,12 +34,14 @@ const WeatherBadgeContainer = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
+  user-select: none;
 `;
 
 const TimeBadgeContainer = styled.div`
   position: absolute;
   bottom: 8px;
   left: 8px;
+  user-select: none;
 `;
 
 const Badge = styled.div`

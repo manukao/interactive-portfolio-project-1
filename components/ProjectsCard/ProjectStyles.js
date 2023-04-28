@@ -8,6 +8,7 @@ export const ProjectsCardContainer = styled.div`
   justify-content: center;
   position: relative;
   height: 100%;
+  user-select: none;
 `;
 
 export const ProjectSlider = styled.a`

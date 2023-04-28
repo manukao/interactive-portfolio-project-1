@@ -12,15 +12,13 @@ const BioCardContainer = styled.div`
   padding: 4px 4px;
 `;
 
-const BioCardAvatar = styled(Image)`
-  width: auto;
-  height: 70px;
+const BioCardText = styled.div`
+  user-select: none;
 `;
-
-const BioCardText = styled.div``;
 
 const InfoTagList = styled.ul`
   padding: 0;
+  user-select: none;
 `;
 
 const InfoTag = styled.li`
@@ -34,12 +32,6 @@ const InfoTag = styled.li`
 export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
-      <BioCardAvatar
-        src={developer.avatar}
-        alt={developer.name}
-        width={512}
-        height={512}
-      />
       <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}
       </BioCardText>

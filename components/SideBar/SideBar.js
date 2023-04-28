@@ -18,7 +18,7 @@ const Container = styled.div`
 const ViewButton = styled.button`
   background-color: transparent;
   color: var(--color-primary);
-  opacity: 0.5;
+  opacity: 0.8;
   border: none;
   cursor: pointer;
   width: 32px;
@@ -57,7 +57,7 @@ const NavLinkWrapper = styled.a`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: var(--color-primary);
-  opacity: 0.5;
+  opacity: 0.8;
   &:hover {
     color: var(--color-secondary);
     scale: 1.1;

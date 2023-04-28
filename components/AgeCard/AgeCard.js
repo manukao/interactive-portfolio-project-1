@@ -7,6 +7,7 @@ const AgeCardContainerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  user-select: none;
 `;
 
 const AgeCardDescription = styled.div`

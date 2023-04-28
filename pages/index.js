@@ -1,4 +1,7 @@
 import developer from "../components/developer";
+import Head from "next/head";
+import PanoramaViewer from "../components/Three/scenes/PanoramaBackground";
+import MemojiScene from "../components/Three/scenes/MemojiScene";
 import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
@@ -6,10 +9,28 @@ import AgeCard from "../components/AgeCard/AgeCard";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
-import PanoramaViewer from "../components/Three/PanoramaBackground";
 import styled from "styled-components";
-import Head from "next/head";
-import Unam3d from "../components/Three/unam3d";
+
+const MainContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
+const MemojiCanvas = styled.div`
+  z-index: 1;
+  height: 18vh;
+  width: 15vh;
+  max-height: 100%;
+  border-radius: var(--border-radius);
+  position: fixed;
+  bottom: 32vh;
+  overflow: hidden;
+`;
 
 const MainBox = styled.div`
   position: fixed;
@@ -81,35 +102,40 @@ export default function HomePage() {
         />
       </Head>
       <PanoramaViewer />
-      <MainBox>
-        <ScrollContainer>
-          <CardSection id="about">
-            <BioCard developer={developer} />
-          </CardSection>
-          <CardSection id="skills">
-            <TechStackCard techSkills={developer.techSkills} />
-          </CardSection>
-          <CardSection>
-            <CardWrapper>
-              <LocationCard location={developer.location} />
-            </CardWrapper>
-          </CardSection>
-          <CardSection>
-            <CardWrapper>
-              <AgeCard ageOfDeveloper={developer.age} />
-            </CardWrapper>
-          </CardSection>
-          <CardSection id="projects">
-            <ProjectsCard projects={developer.projects} />
-          </CardSection>
-          <CardSection>
-            <TestimonialsCard testimonials={developer.testimonials} />
-          </CardSection>
-          <CardSection id="contact">
-            <ContactCardForm />
-          </CardSection>
-        </ScrollContainer>
-      </MainBox>
+      <MainContainer>
+        <MemojiCanvas>
+          <MemojiScene />
+        </MemojiCanvas>
+        <MainBox>
+          <ScrollContainer>
+            <CardSection id="about">
+              <BioCard developer={developer} />
+            </CardSection>
+            <CardSection id="skills">
+              <TechStackCard techSkills={developer.techSkills} />
+            </CardSection>
+            <CardSection>
+              <CardWrapper>
+                <LocationCard location={developer.location} />
+              </CardWrapper>
+            </CardSection>
+            <CardSection>
+              <CardWrapper>
+                <AgeCard ageOfDeveloper={developer.age} />
+              </CardWrapper>
+            </CardSection>
+            <CardSection id="projects">
+              <ProjectsCard projects={developer.projects} />
+            </CardSection>
+            <CardSection>
+              <TestimonialsCard testimonials={developer.testimonials} />
+            </CardSection>
+            <CardSection id="contact">
+              <ContactCardForm />
+            </CardSection>
+          </ScrollContainer>
+        </MainBox>
+      </MainContainer>
     </>
   );
 }

@@ -12,6 +12,7 @@ const TechStackCardContainer = styled.div`
 const TechStackCardList = styled.ul`
   padding: 0;
   margin: 0;
+  user-select: none;
 `;
 
 const TechStackCardItem = styled.li`

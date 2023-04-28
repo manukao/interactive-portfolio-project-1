@@ -6,6 +6,7 @@ export const ContactFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  user-select: none;
 `;
 
 export const ContactFormTitleContainer = styled.div`
