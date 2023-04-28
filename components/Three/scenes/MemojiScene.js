@@ -28,7 +28,7 @@ export default function MemojiScene() {
     scene.add(camera);
 
     // Ambient Light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
     scene.add(ambientLight);
 
     // Directional Light
@@ -51,6 +51,17 @@ export default function MemojiScene() {
     controls.minAzimuthAngle = -Math.PI / 20;
     controls.maxAzimuthAngle = Math.PI / 20;
     controls.enableZoom = false; // Disable zooming in and out
+
+    // Enable zooming in and out
+    controls.enableZoom = false;
+
+    // Set the minimum and maximum distance that the camera can zoom in and out
+    controls.minDistance = 1; // e.g., zoom in to a minimum of 2 units
+    controls.maxDistance = 10; // e.g., zoom out to a maximum of 10 units
+
+    // Set the minimum and maximum zoom level (controls the sensitivity of zooming)
+    controls.minZoom = 0.5; // e.g., minimum zoom level is half of the default
+    controls.maxZoom = 3; // e.g., maximum zoom level is 1.5 times the default
 
     // Load GLB model
     const gltfLoader = new GLTFLoader();
@@ -87,7 +98,7 @@ export default function MemojiScene() {
         mixer.current.update(clock.current.getDelta());
       }
 
-      // Rotate the model
+      // Constantly Rotate the model
       //if (model.current) {
       //  model.current.rotation.x += 0.01;
       //  model.current.rotation.y += 0.01;

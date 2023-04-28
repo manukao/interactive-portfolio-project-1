@@ -42,8 +42,9 @@ const ViewButton = styled.button`
 
 const Icon = styled.div`
   fill: var(--color-primary);
-  width: 16px;
   height: 16px;
+  width: 16px;
+  transition: all 1s ease;
 `;
 
 const NavLinkWrapper = styled.a`
@@ -100,26 +101,29 @@ export default function Sidebar() {
         </svg>
       </ViewButton>
       <NavLinkWrapper href="#about" role="link" aria-label="About">
-        <Icon>
-          <FiUser size aria-hidden="true" />
+        <Icon isShrinkView={isShrinkView}>
+          <FiUser size={isShrinkView ? 16 : 20} aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".about"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#skills" role="link" aria-label="Skills">
         <Icon>
-          <FaRegKeyboard size aria-hidden="true" />
+          <FaRegKeyboard size={isShrinkView ? 16 : 20} aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".skills"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#projects" role="link" aria-label="Projects">
         <Icon>
-          <FiCode size aria-hidden="true" />
+          <FiCode size={isShrinkView ? 16 : 20} aria-hidden="true" />
         </Icon>
         {!isShrinkView && ".projects"}
       </NavLinkWrapper>
       <NavLinkWrapper href="#contact" role="link" aria-label="Contact">
         <Icon>
-          <IoChatbubblesOutline size aria-hidden="true" />
+          <IoChatbubblesOutline
+            size={isShrinkView ? 16 : 20}
+            aria-hidden="true"
+          />
         </Icon>
         {!isShrinkView && ".contact"}
       </NavLinkWrapper>

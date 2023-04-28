@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 const BioCardContainer = styled.div`
   display: flex;
@@ -9,7 +8,7 @@ const BioCardContainer = styled.div`
   position: relative;
   height: 100%;
   text-align: center;
-  padding: 4px 4px;
+  padding: 0.5rem;
 `;
 
 const BioCardText = styled.div`
@@ -18,6 +17,8 @@ const BioCardText = styled.div`
 
 const InfoTagList = styled.ul`
   padding: 0;
+  margin: 0;
+  margin-top: 1rem;
   user-select: none;
 `;
 

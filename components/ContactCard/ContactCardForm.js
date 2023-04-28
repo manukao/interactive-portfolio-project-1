@@ -63,7 +63,11 @@ export default function ContactCardForm() {
           Drop me a message.
         </ContactFormTitle>
       </ContactFormTitleContainer>
-      <ContactForm onSubmit={handleSubmit} aria-labelledby="contact-form-title">
+      <ContactForm
+        autocomplete="off"
+        onSubmit={handleSubmit}
+        aria-labelledby="contact-form-title"
+      >
         <FormInputsContainer>
           <InputsContainer>
             <NameContainer>
