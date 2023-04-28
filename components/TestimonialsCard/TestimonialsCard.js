@@ -4,9 +4,7 @@ const TestimonialsCardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
-  border: 1px solid gray;
-  height: fit-content;
+  height: 100%;
 `;
 
 const Marquee = styled.div`
@@ -31,7 +29,6 @@ const TestimonialCard = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: lightgray;
   padding: 4px 8px;
   font-size: 0.8rem;
   width: 240px;

@@ -6,11 +6,9 @@ export const ProjectsCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
   position: relative;
+  height: 100%;
+  user-select: none;
 `;
 
 export const ProjectSlider = styled.a`
@@ -19,17 +17,31 @@ export const ProjectSlider = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ProjectSliderLeftSide = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 `;
 
 export const StyledImage = styled(Image)`
-  width: 50%;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 `;
 
 export const ProjectSliderRightSide = styled.div`
   width: 50%;
-  display: grid;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 0 0.5rem;
@@ -38,14 +50,13 @@ export const ProjectSliderRightSide = styled.div`
 
 export const ProjectStatus = styled.div`
   position: absolute;
-  top: 0.1rem;
-  right: 0.1rem;
+  font-size: x-small;
+  top: 0.5rem;
+  right: 0.5rem;
   display: inline-block;
-  font-size: 0.75rem;
   padding: 2px 4px;
-  margin: 2px;
-  background-color: lightgray;
-  border-radius: 16px;
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
 `;
 
 export const ProjectTitle = styled.div`
@@ -56,19 +67,19 @@ export const ProjectTitle = styled.div`
 export const ProjectDescription = styled.div`
   font-size: 0.75rem;
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const ProjectStack = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 0.25rem;
 `;
 
 export const ProjectStackItem = styled.div`
   display: inline-block;
-  background-color: lightgray;
-  border-radius: 16px;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
   height: 1rem;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -77,31 +88,31 @@ export const ProjectStackItem = styled.div`
 
 export const ProjectLeftArrowContainer = styled.div`
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 90%;
+  left: 4px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: lightgray;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
 
 export const ProjectRightArrowContainer = styled.div`
   position: absolute;
-  top: 50%;
-  right: 0;
+  top: 90%;
+  right: 4px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: lightgray;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary-color);
   cursor: pointer;
 `;
 

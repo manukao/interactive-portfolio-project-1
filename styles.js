@@ -7,9 +7,36 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --color-primary: rgb(225 225 225);
+    --color-secondary: rgb(2 238 139);
+    --border-radius: 0.25rem;
+    --background-color: rgba(32, 32, 32, 0.8);
+    --bg-secondary-color: rgba(64, 64, 64, 0.5);
+  }
+
+  ::selection {
+    background-color: var(--color-secondary);
+  }
+
+  a:active {
+    background-color: var(--color-secondary);
+  }
+
+  html {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+  }
+
   body {
     margin: 0;
-    font-family: system-ui;
+    top: 3rem;
+    font-size: small;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    transition: color 200ms;
+    background-color: var(--background-color);
+    color: var(--color-primary);
   }
 
 /* ProjectsCard custom flash class on index change */
@@ -39,4 +66,21 @@ export default createGlobalStyle`
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
-`;
+
+/* Typewriter */
+//@keyframes typewriter {
+//  from {
+//    width: 0;
+//  }
+//  to {
+//    width: 100%;
+//  }
+//}
+//
+//@keyframes blink-caret {
+//  50% {
+//    border-color: transparent;
+//  }
+//}
+//
+//`;

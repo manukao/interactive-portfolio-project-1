@@ -1,40 +1,41 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 const BioCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  padding: 0.5rem;
+`;
+
+const BioCardText = styled.div`
+  user-select: none;
 `;
 
 const InfoTagList = styled.ul`
   padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  user-select: none;
 `;
 
 const InfoTag = styled.li`
   display: inline-block;
-  padding: 4px 8px;
-  margin: 4px;
-  background-color: lightgray;
-  border-radius: 16px;
+  padding: 4px 4px;
+  margin: 0 4px 0 4px;
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
 `;
 
 export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
-      <Image
-        src={developer.avatar}
-        alt={developer.name}
-        width={128}
-        height={128}
-      />
-      <p>
+      <BioCardText>
         Hi, I am {developer.name}. {developer.infoText}
-      </p>
+      </BioCardText>
       <InfoTagList>
         {developer.infoTags.map((tag) => (
           <InfoTag key={tag}>{tag}</InfoTag>

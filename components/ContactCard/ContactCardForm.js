@@ -1,32 +1,21 @@
 import { useState } from "react";
-import styled from "styled-components";
-
-const ContactFormContainer = styled.div`
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
-`;
-
-const ContactForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-`;
-
-const TextInput = styled.input`
-  width: 150px;
-  margin: 4px;
-`;
-
-const MessageInput = styled.textarea`
-  resize: none;
-  width: 300px;
-  height: 60px;
-  margin: 4px;
-`;
+import CoolButton from "../button";
+import {
+  ContactFormContainer,
+  ContactFormTitleContainer,
+  ContactFormTitle,
+  ContactForm,
+  FormInputsContainer,
+  InputsContainer,
+  NameContainer,
+  EmailContainer,
+  MessageContainer,
+  SubmitButtonContainer,
+  InputLabel,
+  TextInput,
+  MessageInput,
+  ThankYouMessage,
+} from "./ContactCardStyles";
 
 export default function ContactCardForm() {
   const [formData, setFormData] = useState({
@@ -34,6 +23,8 @@ export default function ContactCardForm() {
     email: "",
     message: "",
   });
+
+  const [showThankYouMessage, setShowThankYouMessage] = useState(false);
 
   const handleChange = (submitEvent) => {
     setFormData({
@@ -53,7 +44,10 @@ export default function ContactCardForm() {
         body: JSON.stringify(formData),
       });
       setFormData({ name: "", email: "", message: "" });
-      alert("Thank you for your message! I'll get back to you asap.");
+      setShowThankYouMessage(true);
+      setTimeout(() => {
+        setShowThankYouMessage(false);
+      }, 3000);
     } catch (error) {
       console.error(error);
       alert(
@@ -63,40 +57,74 @@ export default function ContactCardForm() {
   };
 
   return (
-    <ContactFormContainer>
-      <ContactForm onSubmit={handleSubmit}>
-        <TextInput
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Name"
-          required
-          maxLength={15}
-          data-testid="name-input"
-        />
-        <TextInput
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-          maxLength={50}
-          data-testid="email-input"
-        />
-        <MessageInput
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Message"
-          required
-          maxLength={150}
-          data-testid="message-input"
-        />
-        <button type="submit" data-testid="submit-button">
-          Send Message
-        </button>
+    <ContactFormContainer role="form">
+      <ContactFormTitleContainer>
+        <ContactFormTitle id="contact-form-title">
+          Drop me a message.
+        </ContactFormTitle>
+      </ContactFormTitleContainer>
+      <ContactForm
+        autocomplete="off"
+        onSubmit={handleSubmit}
+        aria-labelledby="contact-form-title"
+      >
+        <FormInputsContainer>
+          <InputsContainer>
+            <NameContainer>
+              <InputLabel htmlFor="name-input">Name:</InputLabel>
+              <TextInput
+                type="text"
+                id="name-input"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                maxLength={15}
+                aria-required="true"
+              />
+            </NameContainer>
+            <EmailContainer>
+              <InputLabel htmlFor="email-input">Email:</InputLabel>
+              <TextInput
+                type="email"
+                id="email-input"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                maxLength={50}
+                aria-required="true"
+              />
+            </EmailContainer>
+          </InputsContainer>
+          <MessageContainer>
+            <InputLabel htmlFor="message-input">Message:</InputLabel>
+            <MessageInput
+              id="message-input"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              maxLength={150}
+              aria-required="true"
+            />
+          </MessageContainer>
+        </FormInputsContainer>
+        <SubmitButtonContainer>
+          <CoolButton
+            buttonContent={".send"}
+            type="submit"
+            data-testid="submit-button"
+            aria-label="Submit Contact Form"
+          >
+            Send
+          </CoolButton>
+          {showThankYouMessage && (
+            <ThankYouMessage role="alert" aria-live="assertive">
+              Thanks!
+            </ThankYouMessage>
+          )}
+        </SubmitButtonContainer>
       </ContactForm>
     </ContactFormContainer>
   );

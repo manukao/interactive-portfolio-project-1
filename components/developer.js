@@ -1,6 +1,7 @@
 const developer = {
-  avatar: "/assets/avatar.png",
+  avatar: "/assets/avatar1.png",
   name: "Manu",
+  logoText: "unam",
   age: 33,
   infoText:
     "Web dev adventurer on a mission to create meaningful digital experiences. 🌊",
@@ -49,7 +50,7 @@ const developer = {
     },
     {
       projectImg:
-        "https://cdn.shopify.com/s/files/1/0665/4669/6427/files/logodick.png?v=1664478364&width=300",
+        "https://cdn.shopify.com/s/files/1/0665/4669/6427/files/logodick.png?v=1664478364",
       title: "JK Immobilien",
       description: "Independent Real-Estate Agent",
       website: "https://jkimmobilien.myshopify.com/",

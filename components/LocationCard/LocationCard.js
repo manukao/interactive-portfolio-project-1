@@ -5,39 +5,56 @@ import WeatherBadge from "./WeatherBadge";
 import LocalTime from "./LocalTime";
 import { useRouter } from "next/router";
 
+const LocationCardWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
 const LocationCardContainer = styled.div`
   display: flex;
   position: relative;
-  border: 1px solid gray;
-  margin: 4px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  height: 99%;
+  width: 99%;
 `;
 
 const MapContainer = styled.div`
   width: 100%;
-  height: 160px;
+  height: 100%;
+  opacity: 0.8;
+  border-radius: var(--border-radius);
 `;
 
 const WeatherBadgeContainer = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
+  user-select: none;
 `;
 
 const TimeBadgeContainer = styled.div`
   position: absolute;
   bottom: 8px;
   left: 8px;
+  user-select: none;
 `;
 
 const Badge = styled.div`
-  background: white;
+  background-color: white;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  border-radius: 999px;
+  border-radius: var(--border-radius);
   padding: 2px 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: var(--bg-secondary-color);
 `;
 
 export default function LocationCard({ location }) {
@@ -63,11 +80,13 @@ export default function LocationCard({ location }) {
           center: [lng, lat],
           zoom: zoom,
           attributionControl: false,
+          scrollZoom: false,
+          dragPan: false,
         });
 
         map.current.addControl(new maplibregl.NavigationControl());
 
-        new maplibregl.Marker({ color: "#fca5a5" })
+        new maplibregl.Marker({ color: "var(--color-secondary)" })
           .setLngLat([7.0904, 50.7399])
           .addTo(map.current);
       } catch (error) {
@@ -79,18 +98,20 @@ export default function LocationCard({ location }) {
   }, [lat, lng, zoom, router.pathname]);
 
   return (
-    <LocationCardContainer>
-      <MapContainer ref={mapContainer} data-testid="map-container" />
-      <WeatherBadgeContainer data-testid="weather-badge-container">
-        <Badge>
-          <WeatherBadge location={location} />
-        </Badge>
-      </WeatherBadgeContainer>
-      <TimeBadgeContainer data-testid="time-badge-container">
-        <Badge>
-          <LocalTime timezone={location.timezone} />
-        </Badge>
-      </TimeBadgeContainer>
-    </LocationCardContainer>
+    <LocationCardWrapper>
+      <LocationCardContainer>
+        <MapContainer ref={mapContainer} data-testid="map-container" />
+        <WeatherBadgeContainer data-testid="weather-badge-container">
+          <Badge>
+            <WeatherBadge location={location} />
+          </Badge>
+        </WeatherBadgeContainer>
+        <TimeBadgeContainer data-testid="time-badge-container">
+          <Badge>
+            <LocalTime timezone={location.timezone} />
+          </Badge>
+        </TimeBadgeContainer>
+      </LocationCardContainer>
+    </LocationCardWrapper>
   );
 }

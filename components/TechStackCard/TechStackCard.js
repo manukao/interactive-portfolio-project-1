@@ -4,21 +4,23 @@ const TechStackCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid gray;
-  padding: 1rem;
-  margin: 4px;
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
 `;
 
 const TechStackCardList = styled.ul`
   padding: 0;
+  margin: 0;
+  user-select: none;
 `;
 
 const TechStackCardItem = styled.li`
   display: inline-block;
   padding: 4px 8px;
   margin: 4px;
-  background-color: lightgray;
-  border-radius: 16px;
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius);
 `;
 
 export default function TechStackCard({ techSkills }) {
