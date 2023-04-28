@@ -54,10 +54,10 @@ export default function MemojiScene() {
 
     // Load GLB model
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("/assets/unam3d/unamthumb.glb", (gltf) => {
+    gltfLoader.load("/assets/unam3d/unamthumb1.glb", (gltf) => {
       model.current = gltf.scene;
       model.current.position.y = -0.1;
-      model.current.rotation.x = Math.PI / 0.51;
+      //model.current.rotation.x = Math.PI / 0.5;
       //model.current.rotation.y = Math.PI / 5;
       scene.add(model.current);
 
