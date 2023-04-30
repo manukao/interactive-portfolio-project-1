@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 import { FaRegKeyboard } from "react-icons/fa";
 import { FiUser, FiCode } from "react-icons/fi";
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -44,10 +45,10 @@ const Icon = styled.div`
   fill: var(--color-primary);
   height: 16px;
   width: 16px;
-  transition: all 1s ease;
+  transition: all 0.2s ease;
 `;
 
-const NavLinkWrapper = styled.a`
+const NavLinkWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
