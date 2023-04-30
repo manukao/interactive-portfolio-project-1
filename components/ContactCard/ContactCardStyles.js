@@ -7,6 +7,7 @@ export const ContactFormContainer = styled.div`
   align-items: center;
   height: 100%;
   user-select: none;
+  padding-top: 12px;
 `;
 
 export const ContactFormTitleContainer = styled.div`
@@ -57,8 +58,8 @@ export const SubmitButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 16px;
-  margin-top: 8px;
+  padding-top: 20px;
+  padding-bottom: 16px;
 `;
 
 export const ThankYouMessage = styled.div`

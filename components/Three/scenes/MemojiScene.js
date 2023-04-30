@@ -125,7 +125,7 @@ export default function MemojiScene() {
 
   return (
     <MemojiCanvas>
-      <Canvas ref={canvasRef} className="webgl" />;
+      <Canvas ref={canvasRef} className="webgl" />
     </MemojiCanvas>
   );
 }

@@ -2,8 +2,6 @@ import developer from "../components/developer";
 import Head from "next/head";
 import PanoramaViewer from "../components/Three/scenes/PanoramaBackground";
 import MemojiScene from "../components/Three/scenes/MemojiScene";
-import UnamPushUpScene from "../components/Three/scenes/UnamPushUpScene";
-import UnamKungFu from "../components/Three/scenes/UnamKungFuScene";
 import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
@@ -18,45 +16,8 @@ import {
   CardSection,
   CardWrapper,
 } from "../components/IndexStyles/IndexStyles";
-import { useState, useRef, useEffect } from "react";
-import UnamKungFuScene from "../components/Three/scenes/UnamKungFuScene";
 
 export default function HomePage() {
-  const [currentSection, setCurrentSection] = useState("about");
-  const [currentScene, setCurrentScene] = useState("memoji");
-  const sectionRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sectionRefs.current.forEach((sectionRef) => {
-      observer.observe(sectionRef);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (currentSection === "skills") {
-      setCurrentScene("pushups");
-    } else if (currentSection === "age") {
-      setCurrentScene("kungfu");
-    } else {
-      setCurrentScene("memoji");
-    }
-  }, [currentSection]);
-
   return (
     <>
       <Head>
@@ -68,49 +29,30 @@ export default function HomePage() {
       </Head>
       <PanoramaViewer />
       <MainContainer>
-        {currentScene === "memoji" && <MemojiScene />}
-        {currentScene === "pushups" && <UnamPushUpScene />}
-        {currentScene === "kungfu" && <UnamKungFuScene />}
+        <MemojiScene />
         <MainBox>
           <ScrollContainer>
-            <CardSection id="about" ref={(el) => (sectionRefs.current[0] = el)}>
+            <CardSection id="about">
               <BioCard developer={developer} />
             </CardSection>
-            <CardSection
-              id="skills"
-              ref={(el) => (sectionRefs.current[1] = el)}
-            >
+            <CardSection id="skills">
               <TechStackCard techSkills={developer.techSkills} />
             </CardSection>
-            <CardSection
-              id="location"
-              ref={(el) => (sectionRefs.current[2] = el)}
-            >
-              <CardWrapper>
-                <LocationCard location={developer.location} />
-              </CardWrapper>
+            <CardSection id="location">
+              <LocationCard location={developer.location} />
             </CardSection>
-            <CardSection id="age" ref={(el) => (sectionRefs.current[3] = el)}>
+            <CardSection id="age">
               <CardWrapper>
                 <AgeCard ageOfDeveloper={developer.age} />
               </CardWrapper>
             </CardSection>
-            <CardSection
-              id="projects"
-              ref={(el) => (sectionRefs.current[4] = el)}
-            >
+            <CardSection id="projects">
               <ProjectsCard projects={developer.projects} />
             </CardSection>
-            <CardSection
-              id="testimonials"
-              ref={(el) => (sectionRefs.current[5] = el)}
-            >
+            <CardSection id="testimonials">
               <TestimonialsCard testimonials={developer.testimonials} />
             </CardSection>
-            <CardSection
-              id="contact"
-              ref={(el) => (sectionRefs.current[6] = el)}
-            >
+            <CardSection id="contact">
               <ContactCardForm />
             </CardSection>
           </ScrollContainer>

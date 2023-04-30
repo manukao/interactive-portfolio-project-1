@@ -38,6 +38,14 @@ export default createGlobalStyle`
     transition: color 200ms;
     background-color: var(--background-color);
     color: var(--color-primary);
+
+    @media (min-width: 768px) {
+      font-size: medium;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: large;
+    }
   }
 
 /* ProjectsCard custom flash class on index change */
