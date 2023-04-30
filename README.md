@@ -1,24 +1,34 @@
-# New Project
+# Welcome to my portfolio app!
 
-This project was created from the neue fische next template.
+This app is the result of my learning journey as a web developer, both through attending the **neuefische GmbH Web Development Bootcamp** and as an **autodidact**. It serves as my capstone project and showcases my skills, projects, and experience.
 
-## Development
+Feel free to explore and learn more about me and my work.
 
-### CodeSandbox
+## Features
 
-Select the "Browser" tab to view this project. If this project contains tests, select the "Tests" tab to check your progress.
+- Learn more about me and my background
+- Check out my tech skills and experience
+- View my projects
+- Get in touch with me via a contact form
 
-> 💡 Please note that Next.js support on CodeSandbox is not great.
+## Technologies Used
 
-### Local development
+- Next.js
+- Three.js
+- React.js
+- styled-components
 
-To run project commands locally, you need to install the dependencies using `npm i` first.
+## Getting Started
 
-You can then use the following commands:
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Start the development server with `npm run dev`
+4. Open `http://localhost:3000` in your browser
 
-- `npm run dev` to start the development server
-- `npm run build` to create a production build
-- `npm run start` to start the production build
-- `npm run test` to run the tests in watch mode (if available)
+## Acknowledgements
 
-> 💡 This project requires a bundler. You can use `npm run dev` to start the development server. You can then view the project in the browser at `http://localhost:3000`. The Live Preview Extension for Visual Studio Code will **not** work for this project.
+Thank you to the neuefische GmbH team for providing a comprehensive and challenging web development bootcamp.
+
+## Contact
+
+Feel free to reach out to me through the contact form in the app, or connect with me on [LinkedIn](https://www.linkedin.com/in/manuel-kao-aa4923178/).

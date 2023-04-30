@@ -24,7 +24,7 @@ export default function HomePage() {
         <title>Unam</title>
         <meta
           name="description"
-          content="Hi, I am Manu - Web dev adventurer and dad with a passion for all things tech. Check out my portfolio and get in touch!"
+          content="Hi, I am Manu - Web dev adventurer on a mission to create meaningful digital experiences. Check out my portfolio and get in touch!"
         />
       </Head>
       <PanoramaViewer />
