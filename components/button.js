@@ -52,8 +52,8 @@ const Edge = styled.span`
   background: linear-gradient(
     to left,
     var(--background-color) 0%,
-    var(--color-secondary) 4%,
-    var(--color-secondary) 96%,
+    var(--color-secondary-shadow) 4%,
+    var(--color-secondary-shadow) 96%,
     var(--background-color) 100%
   );
 `;

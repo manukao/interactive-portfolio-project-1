@@ -15,6 +15,11 @@ const BioCardText = styled.div`
   user-select: none;
 `;
 
+const DeveloperName = styled.span`
+  font-weight: bold;
+  color: var(--color-secondary);
+`;
+
 const InfoTagList = styled.ul`
   padding: 0;
   margin: 0;
@@ -34,7 +39,8 @@ export default function BioCard({ developer }) {
   return (
     <BioCardContainer>
       <BioCardText>
-        Hi, I am {developer.name}. {developer.infoText}
+        Hi, I am <DeveloperName>{developer.name}</DeveloperName>.{" "}
+        {developer.infoText}
       </BioCardText>
       <InfoTagList>
         {developer.infoTags.map((tag) => (
