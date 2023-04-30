@@ -93,7 +93,11 @@ export default function ProjectsCard({ projects }) {
       </ProjectRightArrowContainer>
       <ProjectDotContainer>
         {projects.map((project, index) => (
-          <ProjectDot key={index} onClick={() => goToProject(index)}>
+          <ProjectDot
+            key={index}
+            onClick={() => goToProject(index)}
+            active={index === currentProjectIndex}
+          >
             <BsDot />
           </ProjectDot>
         ))}

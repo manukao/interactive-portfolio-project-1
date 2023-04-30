@@ -4,6 +4,17 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import styled from "styled-components";
 
+const MemojiCanvas = styled.div`
+  z-index: 1;
+  height: 18vh;
+  width: 15vh;
+  max-height: 100%;
+  border-radius: var(--border-radius);
+  position: fixed;
+  bottom: 32vh;
+  overflow: hidden;
+`;
+
 const Canvas = styled.canvas`
   width: 100%;
   height: 100%;
@@ -50,7 +61,6 @@ export default function MemojiScene() {
     controls.maxPolarAngle = Math.PI / 2 + 0.1; // Maximum angle from top view
     controls.minAzimuthAngle = -Math.PI / 20;
     controls.maxAzimuthAngle = Math.PI / 20;
-    controls.enableZoom = false; // Disable zooming in and out
 
     // Enable zooming in and out
     controls.enableZoom = false;
@@ -69,6 +79,8 @@ export default function MemojiScene() {
       model.current = gltf.scene;
       model.current.position.y = -0.1;
       //model.current.rotation.x = Math.PI / 0.5;
+      model.current.rotation.x += -0.1;
+      model.current.rotation.y += 0.1;
       //model.current.rotation.y = Math.PI / 5;
       scene.add(model.current);
 
@@ -99,11 +111,11 @@ export default function MemojiScene() {
       }
 
       // Constantly Rotate the model
-      //if (model.current) {
-      //  model.current.rotation.x += 0.01;
-      //  model.current.rotation.y += 0.01;
-      //  model.current.rotation.z += 0.01;
-      //}
+      if (model.current) {
+        //model.current.rotation.x += 0.01;
+        //model.current.rotation.y += 0.01;
+        //model.current.rotation.z += 0.01;
+      }
 
       renderer.render(scene, camera);
     };
@@ -111,5 +123,9 @@ export default function MemojiScene() {
     animate();
   }, []);
 
-  return <Canvas ref={canvasRef} className="webgl" />;
+  return (
+    <MemojiCanvas>
+      <Canvas ref={canvasRef} className="webgl" />;
+    </MemojiCanvas>
+  );
 }

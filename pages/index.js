@@ -2,6 +2,8 @@ import developer from "../components/developer";
 import Head from "next/head";
 import PanoramaViewer from "../components/Three/scenes/PanoramaBackground";
 import MemojiScene from "../components/Three/scenes/MemojiScene";
+import UnamPushUpScene from "../components/Three/scenes/UnamPushUpScene";
+import UnamKungFu from "../components/Three/scenes/UnamKungFuScene";
 import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
@@ -9,89 +11,52 @@ import AgeCard from "../components/AgeCard/AgeCard";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
-import styled from "styled-components";
-
-const MainContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-`;
-
-const MemojiCanvas = styled.div`
-  z-index: 1;
-  height: 18vh;
-  width: 15vh;
-  max-height: 100%;
-  border-radius: var(--border-radius);
-  position: fixed;
-  bottom: 32vh;
-  overflow: hidden;
-`;
-
-const MainBox = styled.div`
-  position: fixed;
-  bottom: 3rem;
-  width: 100%;
-  max-width: 48rem;
-  height: 25vh;
-  max-height: 100%;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-`;
-
-const ScrollContainer = styled.div`
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  box-sizing: content-box;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.25rem;
-
-  /* Custom scrollbar styles for WebKit-based browsers */
-  &::-webkit-scrollbar {
-    width: 0.3rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--background-color);
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color-secondary);
-    border-radius: 0.25rem;
-  }
-  /* Custom scrollbar styles for Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-secondary) var(--background-color);
-`;
-
-const CardSection = styled.section`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  scroll-snap-align: start;
-  scroll-behavior: smooth;
-  background-color: var(--background-color);
-`;
-
-const CardWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
+import {
+  MainContainer,
+  MainBox,
+  ScrollContainer,
+  CardSection,
+  CardWrapper,
+} from "../components/IndexStyles/IndexStyles";
+import { useState, useRef, useEffect } from "react";
+import UnamKungFuScene from "../components/Three/scenes/UnamKungFuScene";
 
 export default function HomePage() {
+  const [currentSection, setCurrentSection] = useState("about");
+  const [currentScene, setCurrentScene] = useState("memoji");
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrentSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sectionRefs.current.forEach((sectionRef) => {
+      observer.observe(sectionRef);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (currentSection === "skills") {
+      setCurrentScene("pushups");
+    } else if (currentSection === "age") {
+      setCurrentScene("kungfu");
+    } else {
+      setCurrentScene("memoji");
+    }
+  }, [currentSection]);
+
   return (
     <>
       <Head>
@@ -103,34 +68,49 @@ export default function HomePage() {
       </Head>
       <PanoramaViewer />
       <MainContainer>
-        <MemojiCanvas>
-          <MemojiScene />
-        </MemojiCanvas>
+        {currentScene === "memoji" && <MemojiScene />}
+        {currentScene === "pushups" && <UnamPushUpScene />}
+        {currentScene === "kungfu" && <UnamKungFuScene />}
         <MainBox>
           <ScrollContainer>
-            <CardSection id="about">
+            <CardSection id="about" ref={(el) => (sectionRefs.current[0] = el)}>
               <BioCard developer={developer} />
             </CardSection>
-            <CardSection id="skills">
+            <CardSection
+              id="skills"
+              ref={(el) => (sectionRefs.current[1] = el)}
+            >
               <TechStackCard techSkills={developer.techSkills} />
             </CardSection>
-            <CardSection>
+            <CardSection
+              id="location"
+              ref={(el) => (sectionRefs.current[2] = el)}
+            >
               <CardWrapper>
                 <LocationCard location={developer.location} />
               </CardWrapper>
             </CardSection>
-            <CardSection>
+            <CardSection id="age" ref={(el) => (sectionRefs.current[3] = el)}>
               <CardWrapper>
                 <AgeCard ageOfDeveloper={developer.age} />
               </CardWrapper>
             </CardSection>
-            <CardSection id="projects">
+            <CardSection
+              id="projects"
+              ref={(el) => (sectionRefs.current[4] = el)}
+            >
               <ProjectsCard projects={developer.projects} />
             </CardSection>
-            <CardSection>
+            <CardSection
+              id="testimonials"
+              ref={(el) => (sectionRefs.current[5] = el)}
+            >
               <TestimonialsCard testimonials={developer.testimonials} />
             </CardSection>
-            <CardSection id="contact">
+            <CardSection
+              id="contact"
+              ref={(el) => (sectionRefs.current[6] = el)}
+            >
               <ContactCardForm />
             </CardSection>
           </ScrollContainer>

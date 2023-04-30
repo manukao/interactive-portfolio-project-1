@@ -21,16 +21,16 @@ const DeveloperName = styled.span`
 `;
 
 const InfoTagList = styled.ul`
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   user-select: none;
 `;
 
 const InfoTag = styled.li`
   display: inline-block;
-  padding: 4px 4px;
-  margin: 0 4px 0 4px;
+  padding: 4px 8px;
+  margin: 4px;
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius);
 `;
