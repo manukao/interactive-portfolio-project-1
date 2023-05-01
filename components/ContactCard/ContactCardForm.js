@@ -60,7 +60,7 @@ export default function ContactCardForm() {
     <ContactFormContainer role="form">
       <ContactFormTitleContainer>
         <ContactFormTitle id="contact-form-title">
-          Drop me a message.
+          Send me a message.
         </ContactFormTitle>
       </ContactFormTitleContainer>
       <ContactForm

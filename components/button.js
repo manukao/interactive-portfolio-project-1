@@ -78,6 +78,14 @@ const Front = styled.span`
     transform: translateY(-2px);
     transition: transform 34ms;
   }
+
+  @media (min-width: 768px) {
+    padding: 8px 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 10px 30px;
+  }
 `;
 
 const CoolButton = ({ buttonContent }) => (
