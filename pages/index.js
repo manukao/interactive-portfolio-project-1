@@ -1,6 +1,5 @@
 import developer from "../components/developer";
 import Head from "next/head";
-import PanoramaViewer from "../components/Three/scenes/PanoramaBackground";
 import MemojiScene from "../components/Three/scenes/MemojiScene";
 import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
@@ -9,6 +8,7 @@ import AgeCard from "../components/AgeCard/AgeCard";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
+import Sidebar from "../components/SideBar/SideBar";
 import {
   MainContainer,
   MainBox,
@@ -27,8 +27,8 @@ export default function HomePage() {
           content="Hi, I am Manu - Web dev adventurer on a mission to create meaningful digital experiences. Check out my portfolio and get in touch!"
         />
       </Head>
-      <PanoramaViewer />
       <MainContainer>
+        <Sidebar />
         <MemojiScene />
         <MainBox>
           <ScrollContainer>

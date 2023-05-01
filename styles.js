@@ -26,6 +26,7 @@ export default createGlobalStyle`
 
   html {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
   }
 
   body {
@@ -36,7 +37,6 @@ export default createGlobalStyle`
     overflow: hidden;
     flex-direction: column;
     transition: color 200ms;
-    background-color: var(--background-color);
     color: var(--color-primary);
 
     @media (min-width: 768px) {

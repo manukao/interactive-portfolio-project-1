@@ -5,7 +5,8 @@ import Footer from "../components/Footer/Footer";
 import developer from "../components/developer";
 import Head from "next/head";
 import Favicon from "../components/Favicon/Favicon";
-import Sidebar from "../components/SideBar/SideBar";
+import PanoramaBackground from "../components/Three/scenes/PanoramaBackground";
+import Loading from "../components/Loading/Loading";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -14,8 +15,9 @@ export default function App({ Component, pageProps }) {
         <Favicon />
       </Head>
       <GlobalStyle />
+      <Loading />
+      <PanoramaBackground />
       <Header />
-      <Sidebar />
       <Component {...pageProps} />
       <Footer
         gitHubLink={developer.socials.gitHub}

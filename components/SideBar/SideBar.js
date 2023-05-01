@@ -12,6 +12,7 @@ const Container = styled.div`
   width: ${(props) => (props.isShrinkView ? "32px" : "100px")};
   background-color: var(--background-color);
   border-radius: var(--border-radius);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   user-select: none;
 `;
@@ -52,8 +53,8 @@ const NavLinkWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2px;
   padding: 0.5rem;
+  gap: 0.5rem;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.2s ease-in-out;

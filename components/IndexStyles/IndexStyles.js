@@ -17,7 +17,7 @@ export const MainBox = styled.div`
   max-width: 48rem;
   height: 25vh;
   max-height: 100%;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
@@ -32,7 +32,7 @@ export const ScrollContainer = styled.div`
   box-sizing: content-box;
   height: 100%;
   width: 100%;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
 
   /* Custom scrollbar styles for WebKit-based browsers */
   &::-webkit-scrollbar {
@@ -42,12 +42,12 @@ export const ScrollContainer = styled.div`
   &::-webkit-scrollbar-track {
     background-color: var(--background-color);
     border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    border-bottom-right-radius: var(--border-radius);
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-secondary);
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius);
   }
   /* Custom scrollbar styles for Firefox */
   scrollbar-width: thin;

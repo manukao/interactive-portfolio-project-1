@@ -5,10 +5,10 @@ import developer from "../developer";
 
 const HeaderContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: baseline;
   height: 3rem;
-  color: var(--color-primary);
+  //background-color: var(--background-color);
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,25 +19,26 @@ const HeaderContainer = styled.div`
 const Nav = styled.nav`
   ul {
     display: flex;
-    list-style: none;
     margin: 0;
-    gap: 0.5rem;
+    padding: 0;
+    list-style: none;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
   }
 
   li {
+    margin: 0 0.25rem;
   }
 `;
 
 const NavLink = styled(Link)`
   display: block;
-  color: var(--color-primary);
-  background-color: var(--background-color);
-  border-radius: var(--border-radius);
   text-decoration: none;
+  color: var(--color-primary);
   padding: 4px 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  opacity: 0.8;
+  border-radius: var(--border-radius);
 
   &:hover {
     color: var(--color-secondary);
@@ -56,10 +57,10 @@ export default function Header() {
       <Nav>
         <ul>
           <li>
-            <NavLink href="/">Home</NavLink>
+            <NavLink href="/#about">Home</NavLink>
           </li>
           <li>
-            <NavLink href="#projects">Blog</NavLink>
+            <NavLink href="/#projects">Blog</NavLink>
           </li>
         </ul>
       </Nav>
