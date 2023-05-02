@@ -37,6 +37,7 @@ const NavLink = styled(Link)`
   transition: all 0.2s ease-in-out;
   border-radius: var(--border-radius);
   opacity: 0.8;
+  user-select: none;
 
   &:hover {
     color: var(--color-secondary);

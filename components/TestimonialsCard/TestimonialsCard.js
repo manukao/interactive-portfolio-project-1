@@ -12,6 +12,7 @@ export const TestimonialsCardTitle = styled.div`
   top: 0.5rem;
   font-weight: bold;
   color: var(--color-secondary);
+  user-select: none;
 `;
 
 const Marquee = styled.div`
