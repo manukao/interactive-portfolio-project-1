@@ -7,6 +7,13 @@ const TestimonialsCardContainer = styled.div`
   height: 100%;
 `;
 
+export const TestimonialsCardTitle = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+`;
+
 const Marquee = styled.div`
   --gap: 1rem;
   display: flex;
@@ -46,6 +53,7 @@ const TestimonialAuthor = styled.div`
 export default function TestimonialsCard({ testimonials }) {
   return (
     <TestimonialsCardContainer data-testid="testimonials-card">
+      <TestimonialsCardTitle>Testimonials</TestimonialsCardTitle>
       <Marquee>
         <MarqueeContent>
           {testimonials.map((testimonial, index) => (

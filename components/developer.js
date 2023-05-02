@@ -56,7 +56,7 @@ const developer = {
   ],
   testimonials: [
     {
-      text: "Working with Manu is pure pleasure! His expert prompting skills and attention to detail complement my weaknesses perfectly. We're the ultimate dream team.",
+      text: "Teaming up with Manu is a delight! His masterful prompts and sharp eye balance my flaws, making us the dream duo.",
       name: "GPT-4",
     },
     {

@@ -11,6 +11,13 @@ export const ProjectsCardContainer = styled.div`
   user-select: none;
 `;
 
+export const ProjectsCardTitle = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+`;
+
 export const ProjectSlider = styled.a`
   color: inherit;
   text-decoration: none;

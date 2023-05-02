@@ -4,6 +4,7 @@ import { BsChevronCompactRight } from "react-icons/bs";
 import { BsDot } from "react-icons/bs";
 import {
   ProjectsCardContainer,
+  ProjectsCardTitle,
   ProjectSlider,
   StyledImage,
   ProjectSliderRightSide,
@@ -52,6 +53,7 @@ export default function ProjectsCard({ projects }) {
 
   return (
     <ProjectsCardContainer>
+      <ProjectsCardTitle>Projects</ProjectsCardTitle>
       <ProjectSlider
         id="project-slider"
         data-testid="project-website"

@@ -92,6 +92,7 @@ export const ThankYouMessage = styled.div`
   position: absolute;
   font-size: x-small;
   right: 5rem;
+  bottom: 1.5rem;
 
   @media (min-width: 768px) {
     font-size: small;

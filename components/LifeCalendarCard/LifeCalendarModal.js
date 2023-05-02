@@ -61,12 +61,10 @@ const ResetButton = styled.button`
   color: var(--color-primary);
   cursor: pointer;
   padding: 4px 8px;
-  opacity: 0.8;
 
   &:hover {
     color: var(--color-secondary);
     scale: 1.1;
-    opacity: 1;
   }
 
   &:active {
@@ -83,10 +81,8 @@ const SaveButton = styled.button`
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   color: var(--color-primary);
-  opacity: 0.8;
   &:hover {
     scale: 1.1;
-    opacity: 1;
   }
   &:active {
     scale: 0.9;
@@ -116,7 +112,7 @@ export default function LifeCalendarModal({
 
   useEffect(() => {
     setFormData({ birthdate });
-  }, [onReset]);
+  }, [onReset, birthdate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -125,9 +121,10 @@ export default function LifeCalendarModal({
 
   return (
     <ModalFormContainer>
-      <ModalTitle>A hundred year life in boxes</ModalTitle>
+      <ModalTitle>Life in boxes</ModalTitle>
       <ModalText>
-        Every box is a year of your life, if you would live until 100 years old.
+        Every box represents one year of your life, if you would live until 100
+        years old.
       </ModalText>
       <form onSubmit={handleSubmit}>
         <FormLabel htmlFor="birthdate">Birthdate:</FormLabel>

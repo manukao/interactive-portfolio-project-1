@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import CoolButton from "../button";
 
 const Wrapper = styled.div`
   display: flex;
@@ -53,18 +52,15 @@ const YearBox = styled.div`
 
 const OpenButton = styled.button`
   background-color: var(--color-secondary);
+  color: var(--color-primary);
   border: none;
-  color: var(--color-white);
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   text-decoration: none;
-  color: var(--color-primary);
-  opacity: 0.8;
   &:hover {
     scale: 1.1;
-    opacity: 1;
   }
   &:active {
     scale: 0.9;
@@ -91,10 +87,6 @@ export default function LifeCalendar({ birthdate, onOpenModal }) {
   const [elapsedYears, setElapsedYears] = useState([]);
 
   useEffect(() => {
-    setAgeAndProgress(calculateAgeAndProgress(birthdate));
-  }, [birthdate]);
-
-  useEffect(() => {
     const { age: currentAge, progress: currentProgress } =
       calculateAgeAndProgress(birthdate);
     const elapsedYearsCount = elapsedYears.length;
@@ -115,7 +107,9 @@ export default function LifeCalendar({ birthdate, onOpenModal }) {
       }, 100);
       return () => clearInterval(interval);
     }
-  }, [birthdate]);
+
+    setAgeAndProgress({ age: currentAge, progress: currentProgress });
+  }, [birthdate, elapsedYears]);
 
   const years = Array.from({ length: 100 }, (_, i) => {
     if (i < elapsedYears.length) return { elapsed: true };

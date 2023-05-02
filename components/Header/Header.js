@@ -8,7 +8,6 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: baseline;
   height: 3rem;
-  //background-color: var(--background-color);
   position: fixed;
   top: 0;
   width: 100%;
@@ -22,8 +21,6 @@ const Nav = styled.nav`
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
   }
 
   li {
@@ -39,6 +36,7 @@ const NavLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-radius: var(--border-radius);
+  opacity: 0.8;
 
   &:hover {
     color: var(--color-secondary);
@@ -58,9 +56,6 @@ export default function Header() {
         <ul>
           <li>
             <NavLink href="/#about">Home</NavLink>
-          </li>
-          <li>
-            <NavLink href="/#projects">Blog</NavLink>
           </li>
         </ul>
       </Nav>
