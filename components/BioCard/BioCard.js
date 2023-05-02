@@ -42,6 +42,7 @@ export default function BioCard({ developer }) {
       aria-label={`Bio card for ${developer.name}`}
     >
       <BioCardText>
+        Hi, I am{" "}
         <DeveloperName role="heading" aria-level="2">
           {developer.name}
         </DeveloperName>
