@@ -37,14 +37,21 @@ const InfoTag = styled.li`
 
 export default function BioCard({ developer }) {
   return (
-    <BioCardContainer>
+    <BioCardContainer
+      role="article"
+      aria-label={`Bio card for ${developer.name}`}
+    >
       <BioCardText>
-        Hi, I am <DeveloperName>{developer.name}</DeveloperName>.{" "}
-        {developer.infoText}
+        <DeveloperName role="heading" aria-level="2">
+          {developer.name}
+        </DeveloperName>
+        . {developer.infoText}
       </BioCardText>
-      <InfoTagList>
+      <InfoTagList role="list">
         {developer.infoTags.map((tag) => (
-          <InfoTag key={tag}>{tag}</InfoTag>
+          <InfoTag role="listitem" key={tag}>
+            {tag}
+          </InfoTag>
         ))}
       </InfoTagList>
     </BioCardContainer>
