@@ -105,6 +105,7 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit my GitHub profile"
+          role="link"
         >
           <VscGithub size={16} aria-hidden="true" />
         </Icon>
@@ -113,6 +114,7 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit my LinkedIn profile"
+          role="link"
         >
           <RiLinkedinBoxLine size={18} aria-hidden="true" />
         </Icon>

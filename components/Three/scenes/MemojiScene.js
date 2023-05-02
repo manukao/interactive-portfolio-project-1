@@ -75,7 +75,7 @@ export default function MemojiScene() {
 
     // Load GLB model
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("/assets/unam3d/unamthumb1.glb", (gltf) => {
+    gltfLoader.load("/assets/unam3d/unamthumbnoanim.glb", (gltf) => {
       model.current = gltf.scene;
       model.current.position.y = -0.1;
       //model.current.rotation.x = Math.PI / 0.5;
@@ -112,9 +112,8 @@ export default function MemojiScene() {
 
       // Constantly Rotate the model
       if (model.current) {
-        //model.current.rotation.x += 0.01;
-        //model.current.rotation.y += 0.01;
-        //model.current.rotation.z += 0.01;
+        const time = Date.now() * 0.001;
+        model.current.rotation.z = Math.sin(time) * 0.05;
       }
 
       renderer.render(scene, camera);

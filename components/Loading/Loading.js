@@ -39,7 +39,7 @@ export default function Loading() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 100);
 
     return () => {
       clearTimeout(timeoutId);

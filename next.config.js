@@ -15,6 +15,11 @@ const nextConfig = {
   images: {
     domains: ["cdn.shopify.com"],
   },
+
+  i18n: {
+    locales: ["en", "de"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;
