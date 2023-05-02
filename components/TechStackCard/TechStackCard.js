@@ -52,7 +52,7 @@ export default function TechStackCard({ techSkills, cardTitle }) {
   return (
     <TechStackCardContainer>
       <TechStackCardText>
-        Here are some <TextEmphasis>tech skills</TextEmphasis> I have been
+        Here are some <TextEmphasis>Tech skills</TextEmphasis> I have been
         working with and improving on lately.
       </TechStackCardText>
       <TechStackCardList>
