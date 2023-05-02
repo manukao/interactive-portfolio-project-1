@@ -116,9 +116,7 @@ export default function ContactCardForm() {
             type="submit"
             data-testid="submit-button"
             aria-label="Submit Contact Form"
-          >
-            Send
-          </CoolButton>
+          />
           {showThankYouMessage && (
             <ThankYouMessage role="alert" aria-live="assertive">
               Thanks!

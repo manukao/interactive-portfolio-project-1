@@ -2,7 +2,7 @@ const developer = {
   avatar: "/assets/avatar1.png",
   name: "Manu",
   logoText: "unam",
-  age: 33,
+  birthdate: "1990-01-23",
   infoText:
     "Web dev adventurer on a mission to create meaningful digital experiences. 🌊",
   infoTags: ["#eCommerce", "#Branding", "#AI", "#3D", "#web3", "#UI", "#UX"],
@@ -13,8 +13,9 @@ const developer = {
     timezone: "Europe/Berlin",
   },
   techSkills: [
-    "React",
+    "LLMs",
     "Next.js",
+    "React",
     "Three.js",
     "JavaScript",
     "styled-components",

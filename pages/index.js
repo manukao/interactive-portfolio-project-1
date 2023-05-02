@@ -4,7 +4,7 @@ import MemojiScene from "../components/Three/scenes/MemojiScene";
 import BioCard from "../components/BioCard/BioCard.js";
 import LocationCard from "../components/LocationCard/LocationCard";
 import TechStackCard from "../components/TechStackCard/TechStackCard";
-import AgeCard from "../components/AgeCard/AgeCard";
+import Modal from "../components/modal";
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
 import TestimonialsCard from "../components/TestimonialsCard/TestimonialsCard";
 import ContactCardForm from "../components/ContactCard/ContactCardForm";
@@ -16,8 +16,30 @@ import {
   CardSection,
   CardWrapper,
 } from "../components/IndexStyles/IndexStyles";
+import { useState } from "react";
+import LifeCalendar from "../components/LifeCalendarCard/LifeCalendar";
+import LifeCalendarModal from "../components/LifeCalendarCard/LifeCalendarModal";
 
 export default function HomePage() {
+  const [birthdate, setBirthdate] = useState(developer.birthdate);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSaveBirthdate = (newBirthdate) => {
+    setBirthdate(newBirthdate.birthdate);
+  };
+
+  const handleResetBirthdate = () => {
+    setBirthdate(developer.birthdate);
+  };
+
   return (
     <>
       <Head>
@@ -28,6 +50,14 @@ export default function HomePage() {
         />
       </Head>
       <MainContainer>
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          <LifeCalendarModal
+            birthdate={birthdate}
+            onClose={handleCloseModal}
+            onSave={handleSaveBirthdate}
+            onReset={handleResetBirthdate}
+          />
+        </Modal>
         <Sidebar />
         <MemojiScene />
         <MainBox>
@@ -43,7 +73,11 @@ export default function HomePage() {
             </CardSection>
             <CardSection id="age">
               <CardWrapper>
-                <AgeCard ageOfDeveloper={developer.age} />
+                <LifeCalendar
+                  birthdate={birthdate}
+                  onOpenModal={handleOpenModal}
+                  onReset={handleResetBirthdate}
+                />
               </CardWrapper>
             </CardSection>
             <CardSection id="projects">

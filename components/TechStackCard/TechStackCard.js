@@ -32,7 +32,7 @@ const TechStackCardList = styled.ul`
 
 const TechStackCardItem = styled.li`
   display: inline-block;
-  padding: 2px 12px;
+  padding: 2px 8px;
   margin: 2px;
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius);
