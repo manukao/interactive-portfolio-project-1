@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 import { FaRegKeyboard } from "react-icons/fa";
 import { FiUser, FiCode } from "react-icons/fi";
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -11,6 +12,7 @@ const Container = styled.div`
   width: ${(props) => (props.isShrinkView ? "32px" : "100px")};
   background-color: var(--background-color);
   border-radius: var(--border-radius);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   user-select: none;
 `;
@@ -44,15 +46,15 @@ const Icon = styled.div`
   fill: var(--color-primary);
   height: 16px;
   width: 16px;
-  transition: all 1s ease;
+  transition: all 0.2s ease;
 `;
 
-const NavLinkWrapper = styled.a`
+const NavLinkWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2px;
   padding: 0.5rem;
+  gap: 0.5rem;
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.2s ease-in-out;

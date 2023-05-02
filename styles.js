@@ -10,6 +10,7 @@ export default createGlobalStyle`
   :root {
     --color-primary: rgb(225 225 225);
     --color-secondary: rgb(2 238 139);
+    --color-secondary-shadow: rgb(0, 187, 88);
     --border-radius: 0.25rem;
     --background-color: rgba(32, 32, 32, 0.8);
     --bg-secondary-color: rgba(64, 64, 64, 0.5);
@@ -25,6 +26,7 @@ export default createGlobalStyle`
 
   html {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
   }
 
   body {
@@ -35,8 +37,15 @@ export default createGlobalStyle`
     overflow: hidden;
     flex-direction: column;
     transition: color 200ms;
-    background-color: var(--background-color);
     color: var(--color-primary);
+
+    @media (min-width: 768px) {
+      font-size: medium;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: large;
+    }
   }
 
 /* ProjectsCard custom flash class on index change */

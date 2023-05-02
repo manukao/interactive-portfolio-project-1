@@ -2,10 +2,10 @@ const developer = {
   avatar: "/assets/avatar1.png",
   name: "Manu",
   logoText: "unam",
-  age: 33,
+  birthdate: "1990-01-23",
   infoText:
     "Web dev adventurer on a mission to create meaningful digital experiences. 🌊",
-  infoTags: ["#forHire", "#webDev", "#Dad", "#INTP-A"],
+  infoTags: ["#eCommerce", "#Branding", "#AI", "#3D", "#web3", "#UI", "#UX"],
   location: {
     city: "Bonn",
     lng: 7.090467929840088,
@@ -13,19 +13,22 @@ const developer = {
     timezone: "Europe/Berlin",
   },
   techSkills: [
-    "JavaScript",
-    "TypeScript",
-    "React",
+    "LLMs",
     "Next.js",
-    "Vite",
-    "MongoDB",
+    "React",
+    "Three.js",
+    "JavaScript",
     "styled-components",
-    "Tailwind",
     "Git",
     "GitHub",
-    "Three.js",
+    "Jest",
+    "TypeScript",
+    "TailwindCSS",
     "Shopify",
+    "Hydrogen",
+    "Vite",
     "Figma",
+    "MongoDB",
   ],
   socials: {
     gitHub: "https://github.com/manukao",
@@ -39,14 +42,7 @@ const developer = {
       description: "Online-store focused on improving gamers lives.",
       website: "https://yoshi.ninja",
       status: "Building",
-      stack: [
-        "Shopify",
-        "Liquid",
-        "Hydrogen",
-        "Tailwind",
-        "Branding",
-        "Design",
-      ],
+      stack: ["Shopify", "Liquid", "Branding", "Design"],
     },
     {
       projectImg:
@@ -55,12 +51,12 @@ const developer = {
       description: "Independent Real-Estate Agent",
       website: "https://jkimmobilien.myshopify.com/",
       status: "Building",
-      stack: ["Shopify", "Liquid", "Tailwind", "Branding", "Design"],
+      stack: ["Shopify", "Liquid", "Branding", "Design"],
     },
   ],
   testimonials: [
     {
-      text: "Working with Manu is pure pleasure! His expert prompting skills and attention to detail complement my weaknesses perfectly. We're the ultimate dream team.",
+      text: "Teaming up with Manu is a delight! His masterful prompts and sharp eye balance my flaws, making us the dream duo.",
       name: "GPT-4",
     },
     {

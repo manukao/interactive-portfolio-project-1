@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "next/image";
 
 export const ProjectsCardContainer = styled.div`
@@ -9,6 +9,13 @@ export const ProjectsCardContainer = styled.div`
   position: relative;
   height: 100%;
   user-select: none;
+`;
+
+export const ProjectsCardTitle = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
 `;
 
 export const ProjectSlider = styled.a`
@@ -99,6 +106,13 @@ export const ProjectLeftArrowContainer = styled.div`
   border-radius: var(--border-radius);
   background-color: var(--bg-secondary-color);
   cursor: pointer;
+  &:hover {
+    color: var(--color-secondary);
+  }
+
+  &:active {
+    scale: 0.9;
+  }
 `;
 
 export const ProjectRightArrowContainer = styled.div`
@@ -114,6 +128,14 @@ export const ProjectRightArrowContainer = styled.div`
   border-radius: var(--border-radius);
   background-color: var(--bg-secondary-color);
   cursor: pointer;
+
+  &:hover {
+    color: var(--color-secondary);
+  }
+
+  &:active {
+    scale: 0.9;
+  }
 `;
 
 export const ProjectDotContainer = styled.div`
@@ -128,4 +150,17 @@ export const ProjectDotContainer = styled.div`
 
 export const ProjectDot = styled.div`
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+    color: var(--color-secondary);
+  }
+
+  ${(props) =>
+    props.active &&
+    css`
+      transform: scale(1.2);
+      color: var(--color-secondary);
+    `}
 `;

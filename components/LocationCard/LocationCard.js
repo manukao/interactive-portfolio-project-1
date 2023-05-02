@@ -88,25 +88,30 @@ export default function LocationCard({ location }) {
 
         new maplibregl.Marker({ color: "var(--color-secondary)" })
           .setLngLat([7.0904, 50.7399])
-          .addTo(map.current);
+          .addTo(map.current)
+          .getElement()
+          .setAttribute("aria-label", `Map marker for ${location.city}`);
       } catch (error) {
         console.error("Error fetching Maptiler data:", error);
       }
     };
 
     fetchMapStyle();
-  }, [lat, lng, zoom, router.pathname]);
+  }, [lat, lng, zoom, router.pathname, location.city]);
 
   return (
     <LocationCardWrapper>
-      <LocationCardContainer>
-        <MapContainer ref={mapContainer} data-testid="map-container" />
-        <WeatherBadgeContainer data-testid="weather-badge-container">
+      <LocationCardContainer role="application" tabIndex="0">
+        <MapContainer
+          ref={mapContainer}
+          aria-label={`Map of ${location.city}`}
+        />
+        <WeatherBadgeContainer>
           <Badge>
             <WeatherBadge location={location} />
           </Badge>
         </WeatherBadgeContainer>
-        <TimeBadgeContainer data-testid="time-badge-container">
+        <TimeBadgeContainer>
           <Badge>
             <LocalTime timezone={location.timezone} />
           </Badge>

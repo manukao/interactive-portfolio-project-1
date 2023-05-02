@@ -28,11 +28,11 @@ const Shadow = styled.span`
   border-radius: var(--border-radius);
   background: hsl(0deg 0% 0% / 0.25);
   will-change: transform;
-  transform: translateY(2px);
+  transform: translateY(1px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 
   ${Pushable}:hover & {
-    transform: translateY(4px);
+    transform: translateY(2px);
     transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
   }
 
@@ -52,8 +52,8 @@ const Edge = styled.span`
   background: linear-gradient(
     to left,
     var(--background-color) 0%,
-    var(--color-secondary) 4%,
-    var(--color-secondary) 96%,
+    var(--color-secondary-shadow) 8%,
+    var(--color-secondary-shadow) 92%,
     var(--background-color) 100%
   );
 `;
@@ -61,12 +61,12 @@ const Edge = styled.span`
 const Front = styled.span`
   display: block;
   position: relative;
-  padding: 4px 16px;
+  padding: 6px 18px;
   border-radius: var(--border-radius);
   color: var(--color-primary);
   background: var(--color-secondary);
   will-change: transform;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 
   ${Pushable}:hover & {
@@ -77,6 +77,14 @@ const Front = styled.span`
   ${Pushable}:active & {
     transform: translateY(-2px);
     transition: transform 34ms;
+  }
+
+  @media (min-width: 768px) {
+    padding: 8px 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 10px 30px;
   }
 `;
 

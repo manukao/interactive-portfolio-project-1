@@ -7,6 +7,13 @@ const TestimonialsCardContainer = styled.div`
   height: 100%;
 `;
 
+export const TestimonialsCardTitle = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+`;
+
 const Marquee = styled.div`
   --gap: 1rem;
   display: flex;
@@ -45,17 +52,14 @@ const TestimonialAuthor = styled.div`
 
 export default function TestimonialsCard({ testimonials }) {
   return (
-    <TestimonialsCardContainer data-testid="testimonials-card">
+    <TestimonialsCardContainer role="region" aria-label="Testimonials">
+      <TestimonialsCardTitle>Testimonials</TestimonialsCardTitle>
       <Marquee>
-        <MarqueeContent>
+        <MarqueeContent role="list">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} data-testid="testimonial-card">
-              <TestimonialText data-testid="testimonial-text">
-                {testimonial.text}
-              </TestimonialText>
-              <TestimonialAuthor data-testid="testimonial-author">
-                {testimonial.name}
-              </TestimonialAuthor>
+            <TestimonialCard key={index} role="listitem">
+              <TestimonialText>{testimonial.text}</TestimonialText>
+              <TestimonialAuthor>{testimonial.name}</TestimonialAuthor>
             </TestimonialCard>
           ))}
         </MarqueeContent>
