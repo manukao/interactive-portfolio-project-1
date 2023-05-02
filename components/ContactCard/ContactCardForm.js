@@ -57,14 +57,14 @@ export default function ContactCardForm() {
   };
 
   return (
-    <ContactFormContainer role="form">
+    <ContactFormContainer>
       <ContactFormTitleContainer>
         <ContactFormTitle id="contact-form-title">
           Send me a message.
         </ContactFormTitle>
       </ContactFormTitleContainer>
       <ContactForm
-        autocomplete="off"
+        autoComplete="off"
         onSubmit={handleSubmit}
         aria-labelledby="contact-form-title"
       >
@@ -114,7 +114,6 @@ export default function ContactCardForm() {
           <CoolButton
             buttonContent={".send"}
             type="submit"
-            data-testid="submit-button"
             aria-label="Submit Contact Form"
           />
           {showThankYouMessage && (

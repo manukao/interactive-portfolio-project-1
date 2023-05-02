@@ -27,9 +27,7 @@ const useLocalTime = (timezone) => {
   return localTime;
 };
 
-const LocalTime = ({ timezone }) => {
+export default function LocalTime({ timezone }) {
   const localTime = useLocalTime(timezone);
   return <>⌚️{localTime}</>;
-};
-
-export default LocalTime;
+}

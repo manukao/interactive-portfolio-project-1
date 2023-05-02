@@ -57,7 +57,7 @@ export default function TechStackCard({ techSkills, cardTitle }) {
       </TechStackCardText>
       <TechStackCardList>
         {techSkills.map((skill, index) => (
-          <TechStackCardItem key={index} data-testid="tech-skill">
+          <TechStackCardItem key={index} aria-label={skill}>
             {skill}
           </TechStackCardItem>
         ))}

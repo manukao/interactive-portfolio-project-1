@@ -56,7 +56,8 @@ export default function ProjectsCard({ projects }) {
       <ProjectsCardTitle>Projects</ProjectsCardTitle>
       <ProjectSlider
         id="project-slider"
-        data-testid="project-website"
+        role="link"
+        aria-label={projects[currentProjectIndex].title}
         href={projects[currentProjectIndex].website}
         target="_blank"
         rel="noopener noreferrer"
@@ -65,38 +66,45 @@ export default function ProjectsCard({ projects }) {
           <StyledImage
             src={projects[currentProjectIndex].projectImg}
             alt={projects[currentProjectIndex].title}
-            data-testid="project-image"
             width={256}
             height={256}
           />
         </ProjectSliderLeftSide>
         <ProjectSliderRightSide>
-          <ProjectTitle data-testid="project-title">
-            {projects[currentProjectIndex].title}
-          </ProjectTitle>
-          <ProjectStatus data-testid="project-status">
+          <ProjectTitle>{projects[currentProjectIndex].title}</ProjectTitle>
+          <ProjectStatus aria-label="Project status">
             {projects[currentProjectIndex].status}
           </ProjectStatus>
-          <ProjectDescription data-testid="project-description">
+          <ProjectDescription>
             {projects[currentProjectIndex].description}
           </ProjectDescription>
-          <ProjectStack data-testid="project-stack">
+          <ProjectStack aria-label="Project stack">
             {projects[currentProjectIndex].stack.map((stack) => (
               <ProjectStackItem key={stack}>{stack}</ProjectStackItem>
             ))}
           </ProjectStack>
         </ProjectSliderRightSide>
       </ProjectSlider>
-      <ProjectLeftArrowContainer onClick={previousProject}>
+      <ProjectLeftArrowContainer
+        role="button"
+        aria-label="Previous project"
+        onClick={previousProject}
+      >
         <BsChevronCompactLeft />
       </ProjectLeftArrowContainer>
-      <ProjectRightArrowContainer onClick={nextProject}>
+      <ProjectRightArrowContainer
+        role="button"
+        aria-label="Next project"
+        onClick={nextProject}
+      >
         <BsChevronCompactRight />
       </ProjectRightArrowContainer>
       <ProjectDotContainer>
         {projects.map((project, index) => (
           <ProjectDot
             key={index}
+            role="button"
+            aria-label={`Project ${index + 1}`}
             onClick={() => goToProject(index)}
             active={index === currentProjectIndex}
           >

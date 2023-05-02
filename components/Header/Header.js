@@ -50,9 +50,9 @@ const NavLink = styled(Link)`
 
 export default function Header() {
   return (
-    <HeaderContainer>
+    <HeaderContainer role="banner">
       <Logo logoText={developer.logoText} />
-      <Nav>
+      <Nav aria-label="Main Navigation">
         <ul>
           <li>
             <NavLink href="/#about">Home</NavLink>

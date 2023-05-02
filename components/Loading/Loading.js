@@ -48,7 +48,7 @@ export default function Loading() {
 
   return (
     loading && (
-      <SpinnerContainer>
+      <SpinnerContainer role="alert" aria-label="Loading">
         <Spinner />
       </SpinnerContainer>
     )

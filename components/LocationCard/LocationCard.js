@@ -99,14 +99,18 @@ export default function LocationCard({ location }) {
 
   return (
     <LocationCardWrapper>
-      <LocationCardContainer>
-        <MapContainer ref={mapContainer} data-testid="map-container" />
-        <WeatherBadgeContainer data-testid="weather-badge-container">
+      <LocationCardContainer
+        role="region"
+        aria-label={`Map for ${location.city}`}
+        tabIndex="0"
+      >
+        <MapContainer ref={mapContainer} />
+        <WeatherBadgeContainer>
           <Badge>
             <WeatherBadge location={location} />
           </Badge>
         </WeatherBadgeContainer>
-        <TimeBadgeContainer data-testid="time-badge-container">
+        <TimeBadgeContainer>
           <Badge>
             <LocalTime timezone={location.timezone} />
           </Badge>

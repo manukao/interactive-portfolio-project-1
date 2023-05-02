@@ -3,7 +3,7 @@ import { RiLinkedinBoxLine } from "react-icons/ri";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import styled from "styled-components";
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,6 +35,7 @@ const FooterLink = styled.a`
   color: var(--color-primary);
   text-decoration: none;
   opacity: 0.7;
+
   &:hover {
     color: var(--color-secondary);
     opacity: 1;
@@ -47,6 +48,7 @@ const FooterLinkCTA = styled.a`
   font-weight: bold;
   gap: 0.1rem;
   opacity: 0.7;
+
   &:hover {
     opacity: 1;
   }
@@ -75,7 +77,7 @@ const Icon = styled.span`
 
 export default function Footer({ gitHubLink, linkedInLink }) {
   return (
-    <FooterContainer role="footer">
+    <FooterContainer role="contentinfo">
       <FooterLinkContainer aria-label="Footer links">
         <FooterLink
           href="/legal-notice"
@@ -92,7 +94,7 @@ export default function Footer({ gitHubLink, linkedInLink }) {
           Privacy
         </FooterLink>
 
-        <FooterLinkCTA href="/#contact" data-testid="" aria-label="Message me">
+        <FooterLinkCTA href="/#contact" aria-label="Message me">
           <IoChatbubblesOutline size={12} aria-hidden="true" />
           <FooterLinkCTAText>Message me</FooterLinkCTAText>
         </FooterLinkCTA>

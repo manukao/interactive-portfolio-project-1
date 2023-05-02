@@ -24,7 +24,7 @@ export default function Logo({ logoText }) {
   return (
     <>
       <LogoBadge>
-        <LogoLink href="/">
+        <LogoLink href="/" aria-label="Home">
           <LogoText>{logoText}</LogoText>
         </LogoLink>
       </LogoBadge>
