@@ -28,7 +28,6 @@ const FooterLinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  user-select: none;
 `;
 
 const FooterLink = styled.a`
@@ -65,7 +64,7 @@ const FooterIconContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const Icon = styled.span`
+const Icon = styled.a`
   color: var(--color-primary);
   opacity: 0.7;
 
