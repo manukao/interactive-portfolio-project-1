@@ -52,8 +52,8 @@ export default function TechStackCard({ techSkills, cardTitle }) {
   return (
     <TechStackCardContainer>
       <TechStackCardText>
-        Here are some <TextEmphasis>Tech skills</TextEmphasis> I have been
-        working with and improving on lately.
+        Here are some <TextEmphasis>Techs</TextEmphasis> I have been working
+        with and improving on lately.
       </TechStackCardText>
       <TechStackCardList>
         {techSkills.map((skill, index) => (
