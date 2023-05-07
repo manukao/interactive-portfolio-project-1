@@ -5,7 +5,18 @@ const developer = {
   birthdate: "1990-01-23",
   infoText:
     "Web dev adventurer on a mission to create meaningful digital experiences. 🌊",
-  infoTags: ["#eCommerce", "#Branding", "#AI", "#3D", "#web3", "#UI", "#UX"],
+  infoTags: [
+    "#forHire",
+    "#Dad",
+    "INTP-A",
+    "#eCommerce",
+    "#Branding",
+    "#AI",
+    "#3D",
+    "#web3",
+    "#UI",
+    "#UX",
+  ],
   location: {
     city: "Bonn",
     lng: 7.090467929840088,
