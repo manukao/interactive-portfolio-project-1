@@ -8,7 +8,7 @@ const developer = {
   infoTags: [
     "#forHire",
     "#Dad",
-    "INTP-A",
+    "#INTP-A",
     "#eCommerce",
     "#Branding",
     "#AI",
